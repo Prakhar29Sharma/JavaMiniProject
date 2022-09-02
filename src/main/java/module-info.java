@@ -6,4 +6,3 @@ module com.example.miniproject_healthcare_system {
     opens com.example.miniproject_healthcare_system to javafx.fxml;
     exports com.example.miniproject_healthcare_system;
 }
-// is the repo private ?
