@@ -70,7 +70,12 @@
                               </Label>
                               <StackPane prefHeight="65.0" prefWidth="102.0">
                                  <children>
-                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="18.0" minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="50.0" style="-fx-background-color: #ffffff; -fx-opacity: 0;">
+                                    <Label style="-fx-text-fill: #76FF03;" text="register">
+                                       <StackPane.margin>
+                                          <Insets right="45.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="18.0" minWidth="50.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="22.0" prefWidth="50.0" style="-fx-background-color: #ffffff; -fx-opacity: 0;">
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>
@@ -78,11 +83,6 @@
                                           <Insets right="45.0" />
                                        </StackPane.margin>
                                     </Button>
-                                    <Label style="-fx-text-fill: #76FF03;" text="register">
-                                       <StackPane.margin>
-                                          <Insets right="45.0" />
-                                       </StackPane.margin>
-                                    </Label>
                                  </children>
                                  <HBox.margin>
                                     <Insets />

@@ -23,6 +23,14 @@ public class HelloController {
         stage.show();
     }
 
+    public void switchToSignUp(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SignUp.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void switchToLogin(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
