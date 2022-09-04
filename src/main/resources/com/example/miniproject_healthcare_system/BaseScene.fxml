@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.HelloController">
    <children>
       <StackPane layoutX="198.0" layoutY="88.0" prefHeight="193.0" prefWidth="220.0" style="-fx-background-color: #192a56;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -49,7 +49,7 @@
                                     <Image url="@Media/admin.png" />
                                  </image>
                               </ImageView>
-                              <Button id="admin-button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" style="-fx-opacity: 0.05; -fx-background-color: #ffffff; -fx-background-radius: 100;" />
+                              <Button id="admin-button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="200.0" prefWidth="200.0" style="-fx-opacity: 0.05; -fx-background-color: #ffffff; -fx-background-radius: 100;" />
                            </children>
                         </StackPane>
                         <StackPane prefHeight="200.0" prefWidth="200.0">
@@ -62,7 +62,7 @@
                                     <Insets />
                                  </StackPane.margin>
                               </ImageView>
-                              <Button id="user-button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" style="-fx-opacity: 0.05; -fx-background-color: #ffffff; -fx-background-radius: 100;" />
+                              <Button id="user-button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="200.0" prefWidth="200.0" style="-fx-opacity: 0.05; -fx-background-color: #ffffff; -fx-background-radius: 100;" />
                            </children>
                            <HBox.margin>
                               <Insets left="10.0" />
@@ -78,7 +78,7 @@
                                     <Insets />
                                  </StackPane.margin>
                               </ImageView>
-                              <Button id="doctor-button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" style="-fx-opacity: 0.05; -fx-background-color: #ffffff; -fx-background-radius: 100;" />
+                              <Button id="doctor-button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="200.0" prefWidth="200.0" style="-fx-opacity: 0.05; -fx-background-color: #ffffff; -fx-background-radius: 100;" />
                            </children>
                            <HBox.margin>
                               <Insets left="10.0" />
