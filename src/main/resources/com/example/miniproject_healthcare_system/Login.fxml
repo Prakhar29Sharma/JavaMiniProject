@@ -105,6 +105,16 @@
                   <Image url="@Media/key.png" />
                </image>
             </ImageView>
+            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" style="-fx-opacity: 1;" translateX="-330.0" translateY="-195.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Media/Back.png" />
+                     </image>
+                  </ImageView>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #ffffff; -fx-background-radius: 25; -fx-opacity: 0.09;" />
+               </children>
+            </StackPane>
          </children>
       </StackPane>
    </children>
