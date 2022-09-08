@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,12 +22,12 @@
                      <children>
                         <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.400000000000006" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="646.0" AnchorPane.topAnchor="7.0">
                            <image>
-                              <Image url="@JavaMiniProject_Media/Icons/medical-team.png" />
+                              <Image url="@Media/medical-team.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="51.0" fitWidth="52.0" layoutX="655.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@JavaMiniProject_Media/Icons/user.png" />
+                              <Image url="@Media/user.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="563.0" layoutY="21.0" style="-fx-text-fill: #ffffff;" text="user2334">
@@ -45,87 +46,8 @@
                               <Font name="Roboto Bold" size="30.0" />
                            </font>
                         </Label>
-                        <AnchorPane layoutX="15.0" layoutY="71.0" prefHeight="290.0" prefWidth="485.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+                        <AnchorPane layoutX="15.0" layoutY="71.0" prefHeight="290.0" prefWidth="484.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
                            <children>
-                              <VBox layoutY="47.0" prefHeight="244.0" prefWidth="465.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="60.0">
-                                 <children>
-                                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="452.0" style="-fx-background-color: #00DABE; -fx-background-radius: 15;">
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </VBox.margin>
-                                       <children>
-                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                             <HBox.margin>
-                                                <Insets left="10.0" top="10.0" />
-                                             </HBox.margin>
-                                             <image>
-                                                <Image url="@JavaMiniProject_Media/Icons/doctor_icon2.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label text="12:00 pm">
-                                             <HBox.margin>
-                                                <Insets left="20.0" top="20.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label layoutX="30.0" layoutY="30.0" text="Dr. ABC">
-                                             <HBox.margin>
-                                                <Insets left="20.0" top="20.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="452.0" style="-fx-background-color: #00DABE; -fx-background-radius: 15;">
-                                       <children>
-                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                             <HBox.margin>
-                                                <Insets left="10.0" top="10.0" />
-                                             </HBox.margin>
-                                             <image>
-                                                <Image url="@JavaMiniProject_Media/Icons/doctor_icon2.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label text="12:30 pm">
-                                             <HBox.margin>
-                                                <Insets left="20.0" top="20.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label layoutX="30.0" layoutY="30.0" text="Dr. XYZ">
-                                             <HBox.margin>
-                                                <Insets left="20.0" top="20.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </VBox.margin>
-                                    </HBox>
-                                    <HBox layoutX="10.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="452.0" style="-fx-background-color: #00DABE; -fx-background-radius: 15;">
-                                       <children>
-                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                             <HBox.margin>
-                                                <Insets left="10.0" top="10.0" />
-                                             </HBox.margin>
-                                             <image>
-                                                <Image url="@JavaMiniProject_Media/Icons/doctor_icon2.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label text="14:00 pm">
-                                             <HBox.margin>
-                                                <Insets left="20.0" top="20.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label layoutX="30.0" layoutY="30.0" text="Dr. PYQ">
-                                             <HBox.margin>
-                                                <Insets left="20.0" top="20.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </VBox.margin>
-                                    </HBox>
-                                 </children>
-                              </VBox>
                               <Label layoutX="134.0" layoutY="14.0" text="Scheduled Appointments">
                                  <font>
                                     <Font size="22.0" />
@@ -133,9 +55,148 @@
                               </Label>
                               <ImageView fitHeight="46.0" fitWidth="42.0" layoutX="82.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@JavaMiniProject_Media/Icons/medical-appointment.png" />
+                                    <Image url="@Media/medical-appointment.png" />
                                  </image>
                               </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="3.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-18.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-0.0">
+                                 <image>
+                                    <Image url="@Media/patient_doctor.png" />
+                                 </image>
+                              </ImageView>
+                              <ScrollPane layoutX="142.0" layoutY="50.0" prefHeight="240.0" prefWidth="330.0">
+                                 <content>
+                                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="241.0" prefWidth="318.0">
+                                       <children>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="304.0" style="-fx-background-color: #00DABE; -fx-background-radius: 5;">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@Media/doctor_icon3.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label style="-fx-text-fill: #ffffff;" text="12:00 pm">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label layoutX="30.0" layoutY="30.0" style="-fx-text-fill: #ffffff;" text="Dr. ABC">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="303.0" style="-fx-background-color: #00DABE; -fx-background-radius: 5;">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@Media/doctor_icon2.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label style="-fx-text-fill: #ffffff;" text="12:30 pm">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label layoutX="30.0" layoutY="30.0" style="-fx-text-fill: #ffffff;" text="Dr. XYZ">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="302.0" style="-fx-background-color: #00DABE; -fx-background-radius: 5;">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@Media/doctor_icon1.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label style="-fx-text-fill: #ffffff;" text="14:00 pm">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label layoutX="30.0" layoutY="30.0" style="-fx-text-fill: #ffffff;" text="Dr. PYQ">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="15.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="302.0" style="-fx-background-color: #00DABE; -fx-background-radius: 5;">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@Media/doctor_icon1.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label style="-fx-text-fill: #ffffff;" text="14:00 pm">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label layoutX="30.0" layoutY="30.0" style="-fx-text-fill: #ffffff;" text="Dr. PYQ">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="219.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="302.0" style="-fx-background-color: #00DABE; -fx-background-radius: 5;">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@Media/doctor_icon1.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label style="-fx-text-fill: #ffffff;" text="14:00 pm">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label layoutX="30.0" layoutY="30.0" style="-fx-text-fill: #ffffff;" text="Dr. PYQ">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
                            </children>
                         </AnchorPane>
                      </children>
@@ -153,7 +214,7 @@
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
                                        <image>
-                                          <Image url="@home_icon.png" />
+                                          <Image url="@Media/home_512px.png" />
                                        </image>
                                     </ImageView>
                                     <Label text="Dashboard">
@@ -166,7 +227,7 @@
                                     <Insets />
                                  </opaqueInsets>
                                  <VBox.margin>
-                                    <Insets top="2.0" />
+                                    <Insets />
                                  </VBox.margin>
                               </HBox>
                               <HBox layoutX="15.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-background-radius: 40 0 0 40;">
@@ -176,7 +237,7 @@
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
                                        <image>
-                                          <Image url="@search_500px.png" />
+                                          <Image url="@Media/search_500px.png" />
                                        </image>
                                     </ImageView>
                                     <Label text="Search Doctors">
@@ -196,7 +257,7 @@
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
                                        <image>
-                                          <Image url="@external_link_512px.png" />
+                                          <Image url="@Media/external_link_512px.png" />
                                        </image>
                                     </ImageView>
                                     <Label text="Health Blogs">
@@ -216,7 +277,7 @@
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
                                        <image>
-                                          <Image url="@calculator_500px.png" />
+                                          <Image url="@Media/calculator_500px.png" />
                                        </image>
                                     </ImageView>
                                     <Label text="Fitness Calculator">
@@ -236,7 +297,7 @@
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
                                        <image>
-                                          <Image url="@moleskine_96px.png" />
+                                          <Image url="@Media/moleskine_96px.png" />
                                        </image>
                                     </ImageView>
                                     <Label text="View Record">
@@ -256,7 +317,7 @@
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
                                        <image>
-                                          <Image url="@Logout%20Rounded_96px.png" />
+                                          <Image url="@Media/Logout%20Rounded_96px.png" />
                                        </image>
                                     </ImageView>
                                     <Label text="Logout">
