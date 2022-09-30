@@ -1,5 +1,6 @@
 package com.example.miniproject_healthcare_system;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -7,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LoginController {
     /*
@@ -14,7 +16,7 @@ public class LoginController {
     private Scene scene;
 
     public void switchToHome(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("BaseScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("BaseScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
@@ -22,7 +24,7 @@ public class LoginController {
     }
 
     public void switchToSignUp(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SignUp.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
@@ -30,7 +32,7 @@ public class LoginController {
     }
 
     public void switchToLogin(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
@@ -53,6 +55,7 @@ public class LoginController {
     private Label warningLabel2;
 
     String usernameText, passwordText;
+
     @FXML
     void onButtonClick() throws IOException {
         button.setOnAction(e -> {
@@ -68,13 +71,27 @@ public class LoginController {
                 warningLabel2.setText("please enter password!");
                 warningLabel1.setText("");
             } else {
-                warningLabel1.setText("");
                 warningLabel2.setText("");
-                System.out.println("username : " + usernameText);
-                System.out.println("password : " + passwordText);
+                warningLabel1.setText("");
                 // Check if username is in database
                 // if username is there then check for password match
                 // if password matches then allow access to dashboard
+
+                try {
+                    if(JavaDatabaseConnector.validateUser(usernameText) == 1) {
+                        warningLabel1.setText("user not found!");
+                        warningLabel2.setText("");
+                    } else {
+                        if(JavaDatabaseConnector.validatePassword(usernameText, passwordText) == 1) {
+                            warningLabel1.setText("");
+                            warningLabel2.setText("invalid password!");
+                        } else {
+                            System.out.println("Access Granted!");
+                        }
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
 
             }
 

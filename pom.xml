@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.miniproject_healthcare_system/com.example.miniproject_healthcare_system.HelloApplication
+                                com.example.miniproject_healthcare_system/com.example.miniproject_healthcare_system.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
