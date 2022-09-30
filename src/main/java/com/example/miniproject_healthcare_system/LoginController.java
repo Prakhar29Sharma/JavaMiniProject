@@ -2,15 +2,21 @@ package com.example.miniproject_healthcare_system;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginController {
+    private Stage stage;
+    private Scene scene;
     /*
     private Stage stage;
     private Scene scene;
@@ -39,6 +45,7 @@ public class LoginController {
         stage.show();
     }
     */
+
     @FXML
     private TextField username;
 
@@ -57,7 +64,7 @@ public class LoginController {
     String usernameText, passwordText;
 
     @FXML
-    void onButtonClick() throws IOException {
+    void onButtonClick(ActionEvent event) throws IOException {
         button.setOnAction(e -> {
             usernameText = username.getText();
             passwordText = password.getText();
@@ -87,6 +94,11 @@ public class LoginController {
                             warningLabel2.setText("invalid password!");
                         } else {
                             System.out.println("Access Granted!");
+                            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("DemoDashboard.fxml"));
+                            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            scene = new Scene(fxmlLoader.load());
+                            stage.setScene(scene);
+                            stage.show();
                         }
                     }
                 } catch (Exception ex) {
