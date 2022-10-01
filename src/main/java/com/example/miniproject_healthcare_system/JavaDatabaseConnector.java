@@ -45,7 +45,20 @@ class JavaDatabaseConnector {
     }
 
     static void InsertUser(String username, String email, String password) throws SQLException {
-        String query = "INSERT INTO `ams`.`receptionist` (`username`,`email`,`password`) VALUES (" + username + "," + email + "," + password + ");";
+        /*
+        int id = 0;
+
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM receptionist");
+        while(resultSet.next()) {
+            id = resultSet.getInt("id");
+        }
+        
+        id += 1;
+        */
+
+        String query = "INSERT INTO `ams`.`receptionist` (`username`,`email`,`password`) VALUES ('" + username + "','" + email + "','" + password + "')";
+        System.out.println("query : " + query);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         int status = preparedStatement.executeUpdate();
         if (status!=0){

@@ -48,9 +48,12 @@
             <Label fx:id="warningLabel1" layoutX="41.0" layoutY="129.0" prefHeight="18.0" prefWidth="160.0" style="-fx-text-fill: #ff0000;" />
             <Label fx:id="warningLabel2" layoutX="242.0" layoutY="129.0" prefHeight="18.0" prefWidth="160.0" style="-fx-text-fill: #ff0000;" />
             <Label fx:id="warningLabel3" layoutX="240.0" layoutY="199.0" prefHeight="18.0" prefWidth="160.0" style="-fx-text-fill: #ff0000;" />
+            <Label fx:id="warningLabel4" layoutX="41.0" layoutY="199.0" prefHeight="18.0" prefWidth="160.0" style="-fx-text-fill: #ff0000;" />
+            <Label fx:id="finalValidationLabel" alignment="CENTER" layoutY="296.0" prefHeight="18.0" prefWidth="439.0" style="-fx-text-fill: green;" />
          </children>
       </AnchorPane>
       <Button layoutX="42.0" layoutY="23.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="12.0" text="Back" />
+      <Button layoutX="16.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchToLogin" text="Back" />
 
    </children>
 </AnchorPane>
