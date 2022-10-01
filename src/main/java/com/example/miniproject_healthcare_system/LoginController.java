@@ -64,6 +64,15 @@ public class LoginController {
     String usernameText, passwordText;
 
     @FXML
+    void switchToUserRegistration(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("UserRegistration.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     void onButtonClick(ActionEvent event) throws IOException {
         button.setOnAction(e -> {
             usernameText = username.getText();

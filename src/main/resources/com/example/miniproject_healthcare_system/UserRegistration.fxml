@@ -13,7 +13,7 @@
          <children>
             <TextField fx:id="usernameField" layoutX="41.0" layoutY="103.0" prefHeight="25.0" prefWidth="160.0" promptText="Enter Username" />
             <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="41.0" layoutY="173.0" prefHeight="25.0" prefWidth="160.0" promptText="Enter Password" />
-            <Button fx:id="RegisterButton" layoutX="118.0" layoutY="244.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" text="Register" textFill="WHITE" />
+            <Button fx:id="RegisterButton" layoutX="118.0" layoutY="244.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="34.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" text="Register" textFill="WHITE" />
             <Label alignment="CENTER" layoutX="139.0" layoutY="31.0" prefHeight="27.0" prefWidth="162.0" text="User Registration" textFill="#a617ff">
                <font>
                   <Font size="18.0" />
