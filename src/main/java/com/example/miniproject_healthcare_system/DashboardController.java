@@ -29,7 +29,7 @@ public class DashboardController {
     }
 
     public void switchToDoctors(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Doctors.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("doctors.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

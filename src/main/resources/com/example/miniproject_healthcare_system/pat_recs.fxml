@@ -113,7 +113,7 @@
       </HBox>
       <ScrollPane layoutX="146.0" layoutY="116.0" prefHeight="293.0" prefWidth="554.0">
          <content>
-            <TableView prefHeight="291.0" prefWidth="539.0">
+            <TableView prefHeight="500.0" prefWidth="539.0">
                <columns>
                   <TableColumn prefWidth="74.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Sr. No." />
                   <TableColumn prefWidth="150.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Appointment ID" />

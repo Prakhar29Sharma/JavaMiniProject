@@ -31,7 +31,7 @@
                <graphic>
                   <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-dashboard-32%20(1).png" />
+                        <Image url="@../../../../../../../../Downloads/Dashboard.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -43,7 +43,7 @@
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-doctor-66.png" />
+                        <Image url="@../../../../../../../../Downloads/Doctors.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -55,7 +55,7 @@
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-user-50.png" />
+                        <Image url="@../../../../../../../../Downloads/Patients.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -67,7 +67,7 @@
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-appointment-64.png" />
+                        <Image url="@../../../../../../../../Downloads/Appointments.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -79,7 +79,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-appointment-64%20(1).png" />
+                        <Image url="@../../../../../../../../Downloads/Slots.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -91,7 +91,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-logout-24.png" />
+                        <Image url="@../../../../../../../../Downloads/Logout.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -116,7 +116,7 @@
             <TextField layoutX="303.0" layoutY="44.0" prefHeight="25.0" prefWidth="197.0" promptText="Enter your last name" />
             <PasswordField focusTraversable="false" layoutX="45.0" layoutY="96.0" prefHeight="25.0" prefWidth="209.0" promptText="Enter your qualification" />
             <TextField layoutX="45.0" layoutY="148.0" prefHeight="25.0" prefWidth="209.0" promptText="Enter your city area" />
-            <PasswordField focusTraversable="false" layoutX="303.0" layoutY="96.0" prefHeight="25.0" prefWidth="197.0" promptText="Enter your specification" />
+            <PasswordField focusTraversable="false" layoutX="303.0" layoutY="96.0" prefHeight="25.0" prefWidth="197.0" promptText="Enter your specialisation" />
             <TextField layoutX="303.0" layoutY="148.0" prefHeight="25.0" prefWidth="197.0" promptText="Enter your phone number" />
             <TextField layoutX="45.0" layoutY="44.0" prefHeight="25.0" prefWidth="209.0" promptText="Enter your first name" />
             <Label layoutX="46.0" layoutY="25.0" prefHeight="16.0" prefWidth="67.0" text="First Name" wrapText="true">
@@ -137,7 +137,7 @@
                </font>
             </Label>
             <Label layoutX="109.0" layoutY="77.0" prefHeight="17.0" prefWidth="15.0" text="*" textFill="#e40707" />
-            <Label layoutX="303.0" layoutY="77.0" prefHeight="16.0" prefWidth="62.0" text="Specification" wrapText="true">
+            <Label layoutX="303.0" layoutY="77.0" prefHeight="16.0" prefWidth="62.0" text="Specialisation" wrapText="true">
                <font>
                   <Font size="11.0" />
                </font>
