@@ -53,7 +53,7 @@ class JavaDatabaseConnector {
         while(resultSet.next()) {
             id = resultSet.getInt("id");
         }
-        
+
         id += 1;
         */
 

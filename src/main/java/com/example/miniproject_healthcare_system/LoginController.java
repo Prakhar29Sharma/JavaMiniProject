@@ -17,9 +17,11 @@ import java.sql.SQLException;
 public class LoginController {
     private Stage stage;
     private Scene scene;
+
     /*
     private Stage stage;
     private Scene scene;
+
 
     public void switchToHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("BaseScene.fxml"));
@@ -103,7 +105,7 @@ public class LoginController {
                             warningLabel2.setText("invalid password!");
                         } else {
                             System.out.println("Access Granted!");
-                            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("DemoDashboard.fxml"));
+                            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
                             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                             scene = new Scene(fxmlLoader.load());
                             stage.setScene(scene);
@@ -113,9 +115,7 @@ public class LoginController {
                 } catch (Exception ex) {
                     System.out.println(ex);
                 }
-
             }
-
         });
     }
 }

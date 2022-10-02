@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
+   <children>
+      <HBox prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
+         <children>
+            <Pane prefHeight="75.0" prefWidth="132.0">
+               <children>
+                  <Pane layoutX="53.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+                  <Pane layoutX="59.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100;" />
+                  <Pane layoutX="33.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="-135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <VBox layoutY="75.0" prefHeight="335.0" prefWidth="146.0" style="-fx-background-color: #F8F8FF;">
+         <children>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToDash" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-dashboard-32%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-doctor-66.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-user-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-appointment-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToSlots" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-appointment-64%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="41.0" prefWidth="147.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-logout-24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutX="192.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="38.0" layoutY="73.0" text="Total Appointments Today">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="14.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="14.0" prefHeight="24.0" prefWidth="24.0" text="7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="192.0" layoutY="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="41.0" layoutY="69.0" text="Total Doctors">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="15.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="10">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="462.0" layoutY="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="38.0" layoutY="72.0" text="Total Slots Available">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="10.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="462.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="37.0" layoutY="72.0" text="Total Registered Patients">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="9.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="25">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

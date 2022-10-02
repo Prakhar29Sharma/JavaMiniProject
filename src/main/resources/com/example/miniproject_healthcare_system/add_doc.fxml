@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
+         <children>
+            <Pane prefHeight="75.0" prefWidth="132.0">
+               <children>
+                  <Pane layoutX="53.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+                  <Pane layoutX="59.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100;" />
+                  <Pane layoutX="33.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="-135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <VBox layoutY="75.0" prefHeight="335.0" prefWidth="146.0" style="-fx-background-color: #F8F8FF;">
+         <children>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-dashboard-32%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-doctor-66.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-user-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-appointment-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-appointment-64%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="147.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/icons8-logout-24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <HBox layoutX="152.0" layoutY="78.0" prefHeight="35.0" prefWidth="87.0">
+         <children>
+            <Label prefHeight="35.0" prefWidth="116.0" text="Add Doctor">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Pane layoutX="146.0" layoutY="113.0" prefHeight="296.0" prefWidth="554.0">
+         <children>
+            <Label layoutX="23.0" layoutY="14.0" />
+            <TextField layoutX="303.0" layoutY="44.0" prefHeight="25.0" prefWidth="197.0" promptText="Enter your last name" />
+            <PasswordField focusTraversable="false" layoutX="45.0" layoutY="96.0" prefHeight="25.0" prefWidth="209.0" promptText="Enter your qualification" />
+            <TextField layoutX="45.0" layoutY="148.0" prefHeight="25.0" prefWidth="209.0" promptText="Enter your city area" />
+            <PasswordField focusTraversable="false" layoutX="303.0" layoutY="96.0" prefHeight="25.0" prefWidth="197.0" promptText="Enter your specification" />
+            <TextField layoutX="303.0" layoutY="148.0" prefHeight="25.0" prefWidth="197.0" promptText="Enter your phone number" />
+            <TextField layoutX="45.0" layoutY="44.0" prefHeight="25.0" prefWidth="209.0" promptText="Enter your first name" />
+            <Label layoutX="46.0" layoutY="25.0" prefHeight="16.0" prefWidth="67.0" text="First Name" wrapText="true">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="24.0" text="*" textFill="#e40707" />
+            <Label layoutX="305.0" layoutY="25.0" text="Last Name  " wrapText="true">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="361.0" layoutY="25.0" text="*" textFill="#e40707" />
+            <Label layoutX="45.0" layoutY="77.0" text="Qualification" wrapText="true">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="109.0" layoutY="77.0" prefHeight="17.0" prefWidth="15.0" text="*" textFill="#e40707" />
+            <Label layoutX="303.0" layoutY="77.0" prefHeight="16.0" prefWidth="62.0" text="Specification" wrapText="true">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="367.0" layoutY="76.0" text="*" textFill="#e40707" />
+            <Label layoutX="45.0" layoutY="129.0" prefHeight="16.0" prefWidth="46.0" text="City Area" wrapText="true">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="127.0" text="*" textFill="#e40707" />
+            <Label layoutX="305.0" layoutY="129.0" prefHeight="16.0" prefWidth="74.0" text="Phone Number" wrapText="true">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="382.0" layoutY="128.0" text="*" textFill="#e40707" />
+            <Button layoutX="189.0" layoutY="224.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="184.0" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Register" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

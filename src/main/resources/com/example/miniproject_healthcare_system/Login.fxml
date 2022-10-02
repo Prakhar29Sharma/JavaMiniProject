@@ -32,7 +32,7 @@
             </Label>
             <Label fx:id="warningLabel1" layoutX="27.0" layoutY="107.0" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: #ff0000;" />
             <Label fx:id="warningLabel2" layoutX="27.0" layoutY="155.0" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: #ff0000;" />
-            <Button layoutX="82.0" layoutY="292.0" mnemonicParsing="false" onAction="#switchToUserRegistration" prefHeight="38.0" prefWidth="80.0" text="Register" />
+            <Button layoutX="89.0" layoutY="297.0" mnemonicParsing="false" onAction="#switchToUserRegistration" prefHeight="27.0" prefWidth="80.0" text="Register" />
          </children>
       </AnchorPane>
       <Label layoutX="144.0" layoutY="186.0" text="HEALTHCARE " textFill="WHITE">
