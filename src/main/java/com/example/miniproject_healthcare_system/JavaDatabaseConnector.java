@@ -1,5 +1,8 @@
 package com.example.miniproject_healthcare_system;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 
 class JavaDatabaseConnector {
@@ -16,6 +19,9 @@ class JavaDatabaseConnector {
             throw new RuntimeException(e);
         }
     }
+
+    /* validateUser(): checks in database if user already exist */
+    /* helpful to avoid users with same username or maintains uniqueness of username */
     static int validateUser(String username) throws SQLException {
 
         Statement statement = connection.createStatement();
@@ -29,6 +35,7 @@ class JavaDatabaseConnector {
         return 1;
     }
 
+    /* validatePassword() :*/
     static int validatePassword(String username, String password) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM receptionist;");
@@ -63,5 +70,22 @@ class JavaDatabaseConnector {
         if (status!=0){
             System.out.println("Inserted data!");
         }
+    }
+
+
+    public static ObservableList<doctors> getDataDoctor() {
+        ObservableList<doctors> list = FXCollections.observableArrayList();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT `doctor`.`doctor_id`, `doctor`.`firstName`, `doctor`.`lastName`, `doctor`.`qualification`, `doctor`.`specialization`, `doctor`.`phone_no`, `doctor`.`city` FROM `ams`.`doctor`;");
+            while(rs.next()) {
+                // int id, String fname, String lname, String qualification, String specialization, String phno, String city
+                list.add(new doctors(Integer.parseInt(rs.getString("doctor_id")), rs.getString("firstName"), rs.getString("lastName"), rs.getString("qualification"), rs.getString("specialization"), rs.getString("phone_no"), rs.getString("city")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
     }
 }

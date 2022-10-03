@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DoctorController">
    <children>
       <HBox prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
          <children>
@@ -29,7 +30,10 @@
          <children>
             <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToDash" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Dashboard.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -37,7 +41,10 @@
             </Button>
             <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Doctors.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -45,7 +52,10 @@
             </Button>
             <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
                <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Patients.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -53,7 +63,10 @@
             </Button>
             <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Appointments.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -61,7 +74,10 @@
             </Button>
             <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToSlots" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Slots.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -69,7 +85,10 @@
             </Button>
             <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="41.0" prefWidth="147.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Logout.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -79,16 +98,15 @@
       </VBox>
       <ScrollPane layoutX="146.0" layoutY="117.0" prefHeight="293.0" prefWidth="554.0">
          <content>
-            <TableView prefHeight="291.0" prefWidth="755.0">
+            <TableView fx:id="doctorTable" prefHeight="291.0" prefWidth="755.0">
               <columns>
-                <TableColumn prefWidth="50.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="ID" />
-                <TableColumn style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="First Name" />
-                  <TableColumn style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Last Name" />
-                  <TableColumn style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Qualification" />
-                  <TableColumn prefWidth="85.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Specialisation" />
-                  <TableColumn prefWidth="70.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Phone No." />
-                  <TableColumn prefWidth="50.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="City" />
-                  <TableColumn prefWidth="40.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Del" />
+                <TableColumn fx:id="id" prefWidth="50.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Doctor ID" />
+                <TableColumn fx:id="fname" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="First Name" />
+                  <TableColumn fx:id="lname" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Last Name" />
+                  <TableColumn fx:id="qualification" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Qualification" />
+                  <TableColumn fx:id="specialization" prefWidth="85.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Specialisation" />
+                  <TableColumn fx:id="phno" prefWidth="70.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Phone No." />
+                  <TableColumn fx:id="city" prefWidth="50.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="City" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -102,7 +102,7 @@ public class LoginController {
                     } else {
                         if(JavaDatabaseConnector.validatePassword(usernameText, passwordText) == 1) {
                             warningLabel1.setText("");
-                            warningLabel2.setText("invalid password!");
+                            warningLabel2.setText("invalid username or password!");
                         } else {
                             System.out.println("Access Granted!");
                             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));

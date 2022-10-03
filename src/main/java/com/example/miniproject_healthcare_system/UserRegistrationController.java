@@ -61,6 +61,7 @@ public class UserRegistrationController {
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     void onButtonClick(ActionEvent event) throws IOException {
         RegisterButton.setOnAction(e -> {

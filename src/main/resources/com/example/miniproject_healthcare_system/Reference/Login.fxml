@@ -8,19 +8,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.LoginController">
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="396.0" layoutY="20.0" prefHeight="359.0" prefWidth="258.0" style="-fx-background-color: #F8F8FF;">
          <children>
-            <TextField fx:id="username" layoutX="27.0" layoutY="81.0" prefHeight="25.0" prefWidth="204.0" promptText="Enter Username" />
-            <PasswordField fx:id="password" focusTraversable="false" layoutX="27.0" layoutY="129.0" prefHeight="25.0" prefWidth="204.0" promptText="Enter Password" />
-            <Button fx:id="button" layoutX="27.0" layoutY="216.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="38.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa); -fx-text-fill: #ffffff;" text="Sign In" textFill="WHITE" />
-            <Label layoutX="27.0" layoutY="201.0" textFill="#5bcbfa" underline="true">
+            <TextField layoutX="27.0" layoutY="98.0" prefHeight="25.0" prefWidth="204.0" promptText="username/email" />
+            <PasswordField focusTraversable="false" layoutX="27.0" layoutY="140.0" prefHeight="25.0" prefWidth="204.0" promptText="password" />
+            <Button layoutX="27.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" text="Sign In" textFill="WHITE" />
+            <Label layoutX="32.0" layoutY="172.0" text="forgot password? " textFill="#5bcbfa" underline="true">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="289.0" text="New User? " textFill="#a617ff">
+            <Label layoutX="32.0" layoutY="245.0" text="New User? " textFill="#a617ff">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="87.0" layoutY="245.0" text="Register" textFill="#1fd95d" underline="true">
                <font>
                   <Font size="11.0" />
                </font>
@@ -30,9 +35,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="warningLabel1" layoutX="27.0" layoutY="107.0" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: #ff0000;" />
-            <Label fx:id="warningLabel2" layoutX="27.0" layoutY="155.0" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: #ff0000;" />
-            <Button layoutX="89.0" layoutY="283.0" mnemonicParsing="false" onAction="#switchToUserRegistration" prefHeight="27.0" prefWidth="80.0" text="Register" />
          </children>
       </AnchorPane>
       <Label layoutX="144.0" layoutY="186.0" text="HEALTHCARE " textFill="WHITE">
