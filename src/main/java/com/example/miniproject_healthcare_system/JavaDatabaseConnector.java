@@ -47,7 +47,6 @@ class JavaDatabaseConnector {
     static void InsertUser(String username, String email, String password) throws SQLException {
         /*
         int id = 0;
-
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM receptionist");
         while(resultSet.next()) {
