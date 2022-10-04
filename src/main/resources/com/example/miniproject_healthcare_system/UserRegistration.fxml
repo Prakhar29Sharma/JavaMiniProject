@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.UserRegistrationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.UserRegistrationController">
    <children>
-      <AnchorPane layoutX="130.0" layoutY="41.0" prefHeight="327.0" prefWidth="439.0" style="-fx-background-color: #F8F8FF;">
+      <AnchorPane layoutX="230.0" layoutY="136.0" prefHeight="327.0" prefWidth="439.0" style="-fx-background-color: #F8F8FF;">
          <children>
             <TextField fx:id="usernameField" layoutX="41.0" layoutY="103.0" prefHeight="25.0" prefWidth="160.0" promptText="Enter Username" />
             <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="41.0" layoutY="173.0" prefHeight="25.0" prefWidth="160.0" promptText="Enter Password" />
@@ -53,7 +53,7 @@
          </children>
       </AnchorPane>
       <Button layoutX="42.0" layoutY="23.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="12.0" text="Back" />
-      <Button layoutX="16.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchToLogin" text="Back" />
+      <Button layoutX="230.0" layoutY="96.0" mnemonicParsing="false" onAction="#switchToLogin" text="Back" />
 
    </children>
 </AnchorPane>

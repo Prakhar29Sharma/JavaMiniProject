@@ -14,96 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
    <children>
-      <HBox prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
-         <children>
-            <Pane prefHeight="75.0" prefWidth="132.0">
-               <children>
-                  <Pane layoutX="53.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
-                  <Pane layoutX="59.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100;" />
-                  <Pane layoutX="33.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="-135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
-               </children>
-            </Pane>
-         </children>
-      </HBox>
-      <VBox layoutY="75.0" prefHeight="335.0" prefWidth="146.0" style="-fx-background-color: #F8F8FF;">
-         <children>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToDash" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
-               <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@media/Dashboard.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@media/Doctors.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
-               <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@media/Patients.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@media/Appointments.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToSlots" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@media/Slots.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="41.0" prefWidth="147.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@media/Logout.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-         </children>
-      </VBox>
-      <HBox layoutX="152.0" layoutY="78.0" prefHeight="35.0" prefWidth="112.0">
+      <HBox layoutX="192.0" layoutY="78.0" prefHeight="35.0" prefWidth="112.0">
          <children>
             <Label prefHeight="35.0" prefWidth="134.0" text="Appointments">
                <font>
@@ -112,9 +25,9 @@
             </Label>
          </children>
       </HBox>
-      <ScrollPane layoutX="146.0" layoutY="116.0" prefHeight="293.0" prefWidth="554.0">
+      <ScrollPane layoutX="192.0" layoutY="113.0" prefHeight="421.0" prefWidth="699.0">
          <content>
-            <TableView fx:id="appointment_table" prefHeight="500.0" prefWidth="538.0">
+            <TableView fx:id="appointment_table" prefHeight="599.0" prefWidth="682.0">
                <columns>
                   <TableColumn fx:id="app_id" prefWidth="101.9999669790268" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Appointment ID" />
                   <TableColumn fx:id="date" prefWidth="77.59996032714844" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Date" />
@@ -127,7 +40,77 @@
             </TableView>
          </content>
       </ScrollPane>
-      <TextField layoutX="349.0" layoutY="83.0" promptText="Enter AppointmentID" />
-      <Button layoutX="521.0" layoutY="80.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Payment Done" />
+      <TextField layoutX="601.0" layoutY="83.0" promptText="Enter AppointmentID" />
+      <Button layoutX="762.0" layoutY="79.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Payment Done" />
+      <HBox prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
+         <children>
+            <Pane prefHeight="75.0" prefWidth="132.0">
+               <children>
+                  <Pane layoutX="53.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+                  <Pane layoutX="59.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100;" />
+                  <Pane layoutX="33.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="-135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <VBox layoutY="75.0" prefHeight="475.0" prefWidth="175.0" style="-fx-background-color: #F8F8FF;">
+         <children>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#switchToDash" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Dashboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Doctors.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Patients.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Appointments.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToSlots" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Slots.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@media/Logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <HBox layoutY="549.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" />
    </children>
 </AnchorPane>

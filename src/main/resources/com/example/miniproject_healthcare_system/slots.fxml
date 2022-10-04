@@ -14,9 +14,39 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
    <children>
-      <HBox prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
+      <HBox layoutX="190.0" layoutY="80.0" prefHeight="35.0" prefWidth="146.0">
+         <children>
+            <Label prefHeight="35.0" prefWidth="165.0" text="Today's Available Slots">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane layoutX="186.0" layoutY="116.0" prefHeight="423.0" prefWidth="502.0">
+         <content>
+            <TableView prefHeight="598.0" prefWidth="485.0">
+               <columns>
+                  <TableColumn prefWidth="101.9999669790268" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Doctor ID" />
+                  <TableColumn prefWidth="110.0000228881836" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Doctor Name" />
+                  <TableColumn minWidth="6.0" prefWidth="95.33329772949219" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Time" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Pane layoutX="710.0" layoutY="116.0" prefHeight="294.0" prefWidth="175.0">
+         <children>
+            <ComboBox layoutX="13.0" layoutY="76.0" prefWidth="150.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" />
+            <ComboBox layoutX="13.0" layoutY="132.0" prefWidth="150.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" />
+            <Button layoutX="25.0" layoutY="231.0" mnemonicParsing="false" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Book Appointment" />
+         </children>
+      </Pane>
+      <HBox prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
          <children>
             <Pane prefHeight="75.0" prefWidth="132.0">
                <children>
@@ -27,112 +57,64 @@
             </Pane>
          </children>
       </HBox>
-      <VBox layoutY="75.0" prefHeight="335.0" prefWidth="146.0" style="-fx-background-color: #F8F8FF;">
+      <VBox layoutY="75.0" prefHeight="475.0" prefWidth="175.0" style="-fx-background-color: #F8F8FF;">
          <children>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToDash" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#switchToDash" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Dashboard.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Doctors.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Patients.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Appointments.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToSlots" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="23.0" onDragDetected="#switchToSlots" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Slots.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="41.0" prefWidth="147.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Logout.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
          </children>
       </VBox>
-      <HBox layoutX="152.0" layoutY="78.0" prefHeight="35.0" prefWidth="146.0">
-         <children>
-            <Label prefHeight="35.0" prefWidth="165.0" text="Today's Available Slots">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="13.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <ScrollPane layoutX="146.0" layoutY="116.0" prefHeight="293.0" prefWidth="327.0">
-         <content>
-            <TableView prefHeight="291.0" prefWidth="311.0">
-               <columns>
-                  <TableColumn prefWidth="101.9999669790268" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Doctor ID" />
-                  <TableColumn prefWidth="110.0000228881836" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Doctor Name" />
-                  <TableColumn minWidth="6.0" prefWidth="95.33329772949219" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Time" />
-               </columns>
-            </TableView>
-         </content>
-      </ScrollPane>
-      <Pane layoutX="473.0" layoutY="116.0" prefHeight="293.0" prefWidth="227.0">
-         <children>
-            <ComboBox layoutX="39.0" layoutY="2.0" prefWidth="150.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" />
-            <Label alignment="CENTER" layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="67.0" text="Doctor ID" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <ComboBox layoutX="39.0" layoutY="112.0" prefWidth="150.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" />
-            <Label layoutX="47.0" layoutY="116.0" prefHeight="17.0" prefWidth="67.0" text="Time" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Button layoutX="48.0" layoutY="236.0" mnemonicParsing="false" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Book Appointment" />
-         </children>
-      </Pane>
+      <HBox layoutY="549.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" />
    </children>
 </AnchorPane>

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.LoginController">
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.LoginController">
    <children>
-      <AnchorPane layoutX="396.0" layoutY="20.0" prefHeight="359.0" prefWidth="258.0" style="-fx-background-color: #F8F8FF;">
+      <AnchorPane layoutX="450.0" layoutY="120.0" prefHeight="359.0" prefWidth="258.0" style="-fx-background-color: #F8F8FF;">
          <children>
             <TextField fx:id="username" layoutX="27.0" layoutY="81.0" prefHeight="25.0" prefWidth="204.0" promptText="Enter Username" />
             <PasswordField fx:id="password" focusTraversable="false" layoutX="27.0" layoutY="129.0" prefHeight="25.0" prefWidth="204.0" promptText="Enter Password" />
@@ -35,15 +35,15 @@
             <Button layoutX="89.0" layoutY="283.0" mnemonicParsing="false" onAction="#switchToUserRegistration" prefHeight="27.0" prefWidth="80.0" text="Register" />
          </children>
       </AnchorPane>
-      <Label layoutX="144.0" layoutY="186.0" text="HEALTHCARE " textFill="WHITE">
+      <Label layoutX="158.0" layoutY="330.0" text="HEALTHCARE " textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="165.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="53.0" prefWidth="135.0" rotate="135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
-      <Pane layoutX="108.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="53.0" prefWidth="135.0" rotate="-135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
-      <Pane layoutX="185.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100;" />
-      <Label layoutX="116.0" layoutY="220.0" text="All your healthcare management " textFill="WHITE" />
-      <Label layoutX="157.0" layoutY="238.0" text="on your fingertips" textFill="WHITE" />
+      <Pane layoutX="179.0" layoutY="241.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="53.0" prefWidth="135.0" rotate="135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+      <Pane layoutX="122.0" layoutY="241.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="53.0" prefWidth="135.0" rotate="-135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
+      <Pane layoutX="199.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100;" />
+      <Label layoutX="130.0" layoutY="364.0" text="All your healthcare management " textFill="WHITE" />
+      <Label layoutX="171.0" layoutY="382.0" text="on your fingertips" textFill="WHITE" />
    </children>
 </AnchorPane>

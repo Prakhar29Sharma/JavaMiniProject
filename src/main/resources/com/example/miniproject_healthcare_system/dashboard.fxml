@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproject_healthcare_system.DashboardController">
    <children>
-      <HBox prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
+      <HBox prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
          <children>
-            <Pane prefHeight="75.0" prefWidth="132.0">
+            <Pane prefHeight="75.0" prefWidth="130.0">
                <children>
                   <Pane layoutX="53.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="18.0" prefWidth="48.0" rotate="135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" />
                   <Pane layoutX="59.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100;" />
@@ -23,33 +23,27 @@
             </Pane>
          </children>
       </HBox>
-      <VBox layoutY="75.0" prefHeight="378.0" prefWidth="146.0" style="-fx-background-color: #F8F8FF;">
+      <VBox layoutY="75.0" prefHeight="475.0" prefWidth="175.0" style="-fx-background-color: #F8F8FF;">
          <children>
-            <Button mnemonicParsing="false" onAction="#switchToDash" prefHeight="41.0" prefWidth="148.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#switchToDash" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Dashboard.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToDoctors" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Doctors">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@media/Doctors.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToPatientRec" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Patient Records" textFill="#090909">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,11 +51,8 @@
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToAppointments" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Appointments">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -69,11 +60,8 @@
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToSlots" prefHeight="41.0" prefWidth="146.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToSlots" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Slots">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -81,11 +69,8 @@
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="41.0" prefWidth="147.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Sign out">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -93,13 +78,10 @@
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
          </children>
       </VBox>
-      <Pane layoutX="192.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+      <Pane layoutX="200.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
          <children>
             <Label layoutX="38.0" layoutY="73.0" text="Total Appointments Today">
                <font>
@@ -118,7 +100,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="192.0" layoutY="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+      <Pane layoutX="200.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
          <children>
             <Label layoutX="41.0" layoutY="69.0" text="Total Doctors">
                <font>
@@ -137,7 +119,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="462.0" layoutY="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+      <Pane layoutX="658.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
          <children>
             <Label layoutX="38.0" layoutY="72.0" text="Total Slots Available">
                <font>
@@ -156,7 +138,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="462.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
+      <Pane layoutX="427.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="187.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 10; -fx-border-color: #6F00FF; -fx-background-radius: 10;">
          <children>
             <Label layoutX="37.0" layoutY="72.0" text="Total Registered Patients">
                <font>
@@ -175,5 +157,6 @@
             </Label>
          </children>
       </Pane>
+      <HBox layoutY="549.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" />
    </children>
 </AnchorPane>
