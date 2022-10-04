@@ -17,7 +17,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DoctorController implements Initializable {
-
     @FXML
     private TableColumn<doctors, String> city;
 
@@ -52,15 +51,10 @@ public class DoctorController implements Initializable {
         qualification.setCellValueFactory(new PropertyValueFactory<doctors, String>("qualification"));
         specialization.setCellValueFactory(new PropertyValueFactory<doctors, String>("specialization"));
         city.setCellValueFactory(new PropertyValueFactory<doctors, String>("city"));
-
-
         listM = JavaDatabaseConnector.getDataDoctor();
         doctorTable.setItems(listM);
 
     }
-
-
-
 
 
     private Stage stage;
@@ -108,6 +102,14 @@ public class DoctorController implements Initializable {
 
     public void switchToSlots(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("slots.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToAddDoc(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("add_doc.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

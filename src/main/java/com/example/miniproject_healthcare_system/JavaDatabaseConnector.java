@@ -35,7 +35,8 @@ class JavaDatabaseConnector {
         return 1;
     }
 
-    /* validatePassword() :*/
+
+    /* validatePassword(): */
     static int validatePassword(String username, String password) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM receptionist;");

@@ -123,6 +123,6 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="245.0" layoutY="82.0" mnemonicParsing="false" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Add Doctor" />
+      <Button layoutX="245.0" layoutY="82.0" mnemonicParsing="false" onAction="#switchToAddDoc" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Add Doctor" />
    </children>
 </AnchorPane>

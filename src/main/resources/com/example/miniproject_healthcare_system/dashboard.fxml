@@ -108,7 +108,7 @@
             </Label>
             <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="14.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+                  <Image url="@media/Notepad.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="14.0" prefHeight="24.0" prefWidth="24.0" text="7">
@@ -127,7 +127,7 @@
             </Label>
             <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="15.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+                  <Image url="@media/Notepad.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="10">
@@ -146,7 +146,7 @@
             </Label>
             <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="10.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+                  <Image url="@media/Notepad.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="5">
@@ -165,7 +165,7 @@
             </Label>
             <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="9.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/icons8-choice-50.png" />
+                  <Image url="@media/Notepad.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="25">
