@@ -31,7 +31,6 @@ public class UserRegistrationController {
 
     @FXML
     private Label finalValidationLabel;
-
     private Stage stage;
     private Scene scene;
 
