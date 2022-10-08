@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 public class UserRegistrationController {
     @FXML
@@ -34,24 +35,6 @@ public class UserRegistrationController {
     private Stage stage;
     private Scene scene;
 
-    int validateEmailFormat(String email) {
-        char[] Array = email.toCharArray();
-        int countAtSign = 0;
-        int countFullStop = 0;
-        for(char c : Array) {
-            if(c == '@') {
-                countAtSign+=1;
-            }
-            if(c == '.') {
-                countFullStop += 1;
-            }
-        }
-        if(countAtSign > 1 || countFullStop > 1) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
 
     public void switchToLogin(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
@@ -59,6 +42,18 @@ public class UserRegistrationController {
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static boolean validateEmail(String email) {
+            String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                    "[a-zA-Z0-9_+&*-]+)*@" +
+                    "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                    "A-Z]{2,7}$";
+
+            Pattern pat = Pattern.compile(emailRegex);
+            if (email == null)
+                return false;
+            return pat.matcher(email).matches();
     }
 
     @FXML
@@ -72,15 +67,17 @@ public class UserRegistrationController {
             if(!user.equals("") && !email.equals("") && !pass.equals("") && !confirmPass.equals("")){
                 try {
 
+                    boolean isValidEmail = validateEmail(email);
+
                     if(JavaDatabaseConnector.validateUser(user) == 1) {
-                        if(validateEmailFormat(email) == 0) {
+                        if(isValidEmail == true) {
                             if(pass.equals(confirmPass)) {
                                 JavaDatabaseConnector.InsertUser(user, email, confirmPass);
                                 finalValidationLabel.setText("Registered Successfully!");
                             } else {
                                 warningLabel3.setText("password did not match!");
                             }
-                        } else if (validateEmailFormat(email) == 1) {
+                        } else if (isValidEmail == false) {
                             warningLabel2.setText("Invalid email id!");
                         }
                     } else {
@@ -88,7 +85,7 @@ public class UserRegistrationController {
                         if (JavaDatabaseConnector.validateUser(user) == 0) {
                             warningLabel1.setText("User already exist!");
                         }
-                        if (validateEmailFormat(email) == 1) {
+                        if (validateEmail(email) == false) {
                             warningLabel2.setText("Invalid email id!");
                         }
                         if (!pass.equals(confirmPass)) {
@@ -101,15 +98,27 @@ public class UserRegistrationController {
             } else {
                 if(user.equals("")) {
                     warningLabel1.setText("please enter username");
+                } else {
+                    warningLabel1.setText("");
                 }
                 if(email.equals("")) {
                     warningLabel2.setText("please enter email");
+                } else {
+                    if (validateEmail(email) == false) {
+                        warningLabel2.setText("Invalid email id!");
+                    } else {
+                        warningLabel2.setText("");
+                    }
                 }
                 if(pass.equals("")) {
                     warningLabel4.setText("please enter password");
+                } else {
+                    warningLabel4.setText("");
                 }
                 if(confirmPass.equals("")) {
                     warningLabel3.setText("please enter confirm password");
+                } else {
+                    warningLabel3.setText("");
                 }
             }
 

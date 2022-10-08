@@ -41,6 +41,7 @@ public class DoctorController implements Initializable {
     @FXML
     private TableColumn<doctors, String> specialization;
 
+
     ObservableList<doctors> listM;
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -53,7 +54,6 @@ public class DoctorController implements Initializable {
         city.setCellValueFactory(new PropertyValueFactory<doctors, String>("city"));
         listM = JavaDatabaseConnector.getDataDoctor();
         doctorTable.setItems(listM);
-
     }
 
 
