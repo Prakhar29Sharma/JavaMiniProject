@@ -10,22 +10,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.text.DateFormat;
 import java.time.*;
 import java.time.format.*;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
 
-public class DashboardController implements Initializable{
-
+public class DashboardController implements Initializable {
 
     private Stage stage;
     private Scene scene;
+
+    @FXML
+    Label timeLabel;
+    @FXML
+    Label dateLabel;
+
+
 
     public void switchToLogin(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
@@ -77,24 +88,36 @@ public class DashboardController implements Initializable{
 
 
 
-
-    public static void time() {
-        final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+    public void time() {
+         final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();
             DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             String formatDate = date1.format(format);
             DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("HH:mm:ss");
             String formatTime1 = date1.format(formatTime);
-            System.out.println("formatted Time : " + formatTime1);
-            System.out.println("formatted Date : " + formatDate);
+            dateLabel.setText(formatDate);
+            timeLabel.setText(formatTime1);
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        time();
+        //time();
+        try {
+            /*LocalDate date = LocalDate.now();
+            String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            dateLabel = new Label(formattedDate);
+            dateLabel.setText(formattedDate);
+             */
+            time();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
+
+
+
+
 }
