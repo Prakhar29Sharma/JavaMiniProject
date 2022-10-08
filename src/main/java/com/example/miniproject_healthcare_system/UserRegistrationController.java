@@ -56,6 +56,18 @@ public class UserRegistrationController {
             return pat.matcher(email).matches();
     }
 
+    public static int passwordStrength(String pass) {
+        int len = pass.length();
+        // we can count number of small case, uppercase, special char and numbers to calc strength
+        if(len < 8) {
+            // weak password
+            return 0;
+        } else {
+            // strong password
+            return 1;
+        }
+    }
+
     @FXML
     void onButtonClick(ActionEvent event) throws IOException {
         RegisterButton.setOnAction(e -> {

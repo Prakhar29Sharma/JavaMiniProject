@@ -36,6 +36,23 @@ public class DashboardController implements Initializable {
     @FXML
     Label dateLabel;
 
+    @FXML
+    Label userLabel;
+
+    static String username;
+
+    public  void setUser(){
+        String greetUser = "Hello, " + username;
+        userLabel.setText(greetUser);
+    }
+
+    public static void setUsername(String usr){
+        username = usr;
+    }
+
+
+
+
 
 
     public void switchToLogin(ActionEvent event) throws IOException {
@@ -112,6 +129,7 @@ public class DashboardController implements Initializable {
             dateLabel.setText(formattedDate);
              */
             time();
+            setUser();
         } catch (Exception e) {
             System.out.println(e);
         }

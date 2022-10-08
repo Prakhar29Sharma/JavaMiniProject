@@ -107,6 +107,7 @@ public class LoginController {
                             warningLabel2.setText("invalid username or password!");
                         } else {
                             System.out.println("Access Granted!");
+                            DashboardController.setUsername(usernameText);
                             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
                             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                             scene = new Scene(fxmlLoader.load());
