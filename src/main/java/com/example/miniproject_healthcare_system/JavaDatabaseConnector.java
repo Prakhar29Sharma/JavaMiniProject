@@ -64,7 +64,7 @@ class JavaDatabaseConnector {
     }
 
     static void insertDoctor(String fname, String lname, String qualification, String specialization, String phno, String city) throws SQLException {
-        String query = "INSERT INTO `ams`.`doctor` (`firstName`,`lastName`,`qualification`,`specialization`,`phone_no`,`city`,`active`) VALUES ("+ fname + ", " + lname + ", " + qualification + ", " + specialization + ", " + phno +", " + city + ", " + 1 + ");";
+        String query = "INSERT INTO `ams`.`doctor` (`firstName`,`lastName`,`qualification`,`specialization`,`phone_no`,`city`,`active`) VALUES ('"+ fname + "', '" + lname + "', '" + qualification + "', '" + specialization + "', '" + phno +"', '" + city + "', " + 1 + ");";
         System.out.println(query);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         int status = preparedStatement.executeUpdate();

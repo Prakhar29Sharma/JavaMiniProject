@@ -64,7 +64,7 @@
          </content>
       </ScrollPane>
       <HBox layoutX="152.0" layoutY="78.0" prefHeight="35.0" prefWidth="87.0" />
-      <Button layoutX="286.0" layoutY="82.0" mnemonicParsing="false" onAction="#switchToAddDoc" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Add Doctor" />
+      <Button fx:id="addDoc" layoutX="286.0" layoutY="82.0" mnemonicParsing="false" onAction="#switchToAddDoc" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Add Doctor" />
       <VBox layoutY="75.0" prefHeight="475.0" prefWidth="175.0" style="-fx-background-color: #F8F8FF;">
          <children>
             <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#switchToDash" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
@@ -123,7 +123,7 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="202.0" layoutY="78.0" prefHeight="35.0" prefWidth="116.0" text="Doctors List">
+      <Label layoutX="202.0" layoutY="78.0" prefHeight="35.0" prefWidth="79.0" text="Doctors List">
          <font>
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
