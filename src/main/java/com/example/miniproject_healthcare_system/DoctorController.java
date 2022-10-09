@@ -66,6 +66,7 @@ public class DoctorController implements Initializable {
         } catch (Exception e) {
             System.out.println(e);
         }
+
         id.setCellValueFactory(new PropertyValueFactory<doctors, Integer>("id"));
         fname.setCellValueFactory(new PropertyValueFactory<doctors, String>("fname"));
         lname.setCellValueFactory(new PropertyValueFactory<doctors, String>("lname"));

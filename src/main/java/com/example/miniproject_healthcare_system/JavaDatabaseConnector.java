@@ -53,23 +53,23 @@ class JavaDatabaseConnector {
     }
 
     static void InsertUser(String username, String email, String password) throws SQLException {
-        /*
-        int id = 0;
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM receptionist");
-        while(resultSet.next()) {
-            id = resultSet.getInt("id");
-        }
-
-        id += 1;
-        */
 
         String query = "INSERT INTO `ams`.`receptionist` (`username`,`email`,`password`) VALUES ('" + username + "','" + email + "','" + password + "')";
         System.out.println("query : " + query);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         int status = preparedStatement.executeUpdate();
         if (status!=0){
-            System.out.println("Inserted data!");
+            System.out.println("Inserted User Data Successfully!");
+        }
+    }
+
+    static void insertDoctor(String fname, String lname, String qualification, String specialization, String phno, String city) throws SQLException {
+        String query = "INSERT INTO `ams`.`doctor` (`firstName`,`lastName`,`qualification`,`specialization`,`phone_no`,`city`,`active`) VALUES ("+ fname + ", " + lname + ", " + qualification + ", " + specialization + ", " + phno +", " + city + ", " + 1 + ");";
+        System.out.println(query);
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        int status = preparedStatement.executeUpdate();
+        if(status!=0) {
+            System.out.println("Doctors Data Inserted Successfully!");
         }
     }
 
@@ -78,7 +78,7 @@ class JavaDatabaseConnector {
         ObservableList<doctors> list = FXCollections.observableArrayList();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT `doctor`.`doctor_id`, `doctor`.`firstName`, `doctor`.`lastName`, `doctor`.`qualification`, `doctor`.`specialization`, `doctor`.`phone_no`, `doctor`.`city` FROM `ams`.`doctor`;");
+            ResultSet rs = statement.executeQuery("SELECT `doctor`.`doctor_id`, `doctor`.`firstName`, `doctor`.`lastName`, `doctor`.`qualification`, `doctor`.`specialization`, `doctor`.`phone_no`, `doctor`.`city` FROM `ams`.`doctor` WHERE `doctor`.`active` = 1;");
             while(rs.next()) {
                 // int id, String fname, String lname, String qualification, String specialization, String phno, String city
                 list.add(new doctors(Integer.parseInt(rs.getString("doctor_id")), rs.getString("firstName"), rs.getString("lastName"), rs.getString("qualification"), rs.getString("specialization"), rs.getString("phone_no"), rs.getString("city")));
