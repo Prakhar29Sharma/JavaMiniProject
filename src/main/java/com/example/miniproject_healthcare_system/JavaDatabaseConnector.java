@@ -89,4 +89,38 @@ class JavaDatabaseConnector {
 
         return list;
     }
+
+    public static ObservableList<doctors> getDoctorBySpecialization(String spec) {
+        ObservableList<doctors> list = FXCollections.observableArrayList();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT `doctor`.`doctor_id`, `doctor`.`firstName`, `doctor`.`lastName`, `doctor`.`qualification`, `doctor`.`specialization`, `doctor`.`phone_no`, `doctor`.`city` FROM `ams`.`doctor` WHERE `doctor`.`active` = 1 AND `doctor`.`specialization` = '" + spec + "';");
+            while(rs.next()) {
+                // int id, String fname, String lname, String qualification, String specialization, String phno, String city
+                list.add(new doctors(Integer.parseInt(rs.getString("doctor_id")), rs.getString("firstName"), rs.getString("lastName"), rs.getString("qualification"), rs.getString("specialization"), rs.getString("phone_no"), rs.getString("city")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+    public static ObservableList<doctors> getDoctorByID(int id) {
+        ObservableList<doctors> list = FXCollections.observableArrayList();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT `doctor`.`doctor_id`, `doctor`.`firstName`, `doctor`.`lastName`, `doctor`.`qualification`, `doctor`.`specialization`, `doctor`.`phone_no`, `doctor`.`city` FROM `ams`.`doctor` WHERE `doctor`.`active` = 1 AND `doctor`.`doctor_id` = '"+id+"';");
+            while(rs.next()) {
+                // int id, String fname, String lname, String qualification, String specialization, String phno, String city
+                list.add(new doctors(Integer.parseInt(rs.getString("doctor_id")), rs.getString("firstName"), rs.getString("lastName"), rs.getString("qualification"), rs.getString("specialization"), rs.getString("phone_no"), rs.getString("city")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+
 }

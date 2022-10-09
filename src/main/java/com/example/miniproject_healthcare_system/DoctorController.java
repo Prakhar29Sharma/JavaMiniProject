@@ -9,19 +9,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.EventObject;
 import java.util.ResourceBundle;
 
 public class DoctorController implements Initializable {
@@ -56,9 +54,18 @@ public class DoctorController implements Initializable {
     @FXML
     Label userLabel;
 
+    @FXML
+    private Button searchButton;
+
+    @FXML
+    private TextField searchID;
+
+    @FXML
+    private TextField searchSpec;
+
     Timeline timeline;
 
-    ObservableList<doctors> listM;
+    ObservableList<doctors> listM = JavaDatabaseConnector.getDataDoctor();
 
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -75,9 +82,10 @@ public class DoctorController implements Initializable {
         qualification.setCellValueFactory(new PropertyValueFactory<doctors, String>("qualification"));
         specialization.setCellValueFactory(new PropertyValueFactory<doctors, String>("specialization"));
         city.setCellValueFactory(new PropertyValueFactory<doctors, String>("city"));
-        listM = JavaDatabaseConnector.getDataDoctor();
+
         doctorTable.setItems(listM);
     }
+
 
     public void time() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
@@ -93,6 +101,35 @@ public class DoctorController implements Initializable {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
+
+    public void onSearch(ActionEvent event) {
+        searchButton.setOnAction(e -> {
+            int id = 0;
+
+            if(searchID.getText().equals("")){
+                System.out.println("search id field empty");
+            } else {
+                id = Integer.parseInt(searchID.getText());
+            }
+
+            String spec = searchSpec.getText();
+            if(searchID.getText() == "" && spec == "") {
+                listM = JavaDatabaseConnector.getDataDoctor();
+            } else {
+                if(searchID.getText()!="" && spec == "") {
+                    listM = JavaDatabaseConnector.getDoctorByID(id);
+                } else if(searchID.getText() == "" && spec == "") {
+                    listM = JavaDatabaseConnector.getDoctorBySpecialization(spec);
+                } else {
+                    listM = JavaDatabaseConnector.getDoctorBySpecialization(spec);
+                }
+            }
+
+
+
+        });
+    }
+
 
 
     private Stage stage;

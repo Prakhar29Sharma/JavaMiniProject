@@ -131,8 +131,8 @@
       <HBox layoutY="549.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" />
       <TextField fx:id="searchID" layoutX="556.0" layoutY="127.0" prefHeight="26.0" prefWidth="87.0" promptText="search by ID" />
       <TextField fx:id="searchSpec" layoutX="656.0" layoutY="128.0" promptText="search by specialization" />
-      <Button fx:id="searchButton" layoutX="818.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Search" />
-      <TextField layoutX="266.0" layoutY="128.0" prefHeight="26.0" prefWidth="194.0" promptText="Enter ID of Doctor to be Removed" />
-      <Button fx:id="searchButton1" layoutX="470.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Remove" />
+      <Button fx:id="searchButton" layoutX="818.0" layoutY="128.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="67.0" text="Search" />
+      <TextField fx:id="idField" layoutX="266.0" layoutY="128.0" prefHeight="26.0" prefWidth="194.0" promptText="Enter ID of Doctor to be Removed" />
+      <Button fx:id="removeButton" layoutX="470.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Remove" />
    </children>
 </AnchorPane>
