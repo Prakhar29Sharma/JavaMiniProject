@@ -115,18 +115,19 @@ public class DoctorController implements Initializable {
             String spec = searchSpec.getText();
             if(searchID.getText() == "" && spec == "") {
                 listM = JavaDatabaseConnector.getDataDoctor();
+                doctorTable.setItems(listM);
             } else {
                 if(searchID.getText()!="" && spec == "") {
                     listM = JavaDatabaseConnector.getDoctorByID(id);
+                    doctorTable.setItems(listM);
                 } else if(searchID.getText() == "" && spec == "") {
                     listM = JavaDatabaseConnector.getDoctorBySpecialization(spec);
+                    doctorTable.setItems(listM);
                 } else {
                     listM = JavaDatabaseConnector.getDoctorBySpecialization(spec);
+                    doctorTable.setItems(listM);
                 }
             }
-
-
-
         });
     }
 
