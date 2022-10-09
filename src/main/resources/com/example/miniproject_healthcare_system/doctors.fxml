@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,9 +46,9 @@
             </Pane>
          </children>
       </HBox>
-      <ScrollPane layoutX="180.0" layoutY="117.0" prefHeight="427.0" prefWidth="716.0">
+      <ScrollPane layoutX="180.0" layoutY="163.0" prefHeight="382.0" prefWidth="716.0">
          <content>
-            <TableView fx:id="doctorTable" prefHeight="600.0" prefWidth="725.0">
+            <TableView fx:id="doctorTable" prefHeight="706.0" prefWidth="726.0">
               <columns>
                 <TableColumn fx:id="id" prefWidth="50.0" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="Doctor ID" />
                 <TableColumn fx:id="fname" style="-fx-background-color: #f8f8ff; -fx-border-color: #7CB9E8;" text="First Name" />
@@ -63,8 +64,7 @@
             </TableView>
          </content>
       </ScrollPane>
-      <HBox layoutX="152.0" layoutY="78.0" prefHeight="35.0" prefWidth="87.0" />
-      <Button fx:id="addDoc" layoutX="286.0" layoutY="82.0" mnemonicParsing="false" onAction="#switchToAddDoc" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Add Doctor" />
+      <Button fx:id="addDoc" layoutX="181.0" layoutY="128.0" mnemonicParsing="false" onAction="#switchToAddDoc" text="Add Doctor" />
       <VBox layoutY="75.0" prefHeight="475.0" prefWidth="175.0" style="-fx-background-color: #F8F8FF;">
          <children>
             <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#switchToDash" prefHeight="50.0" prefWidth="175.0" style="-fx-border-color: #E6E6FA; -fx-background-color: #F8F8FF;" text="Dashboard">
@@ -123,11 +123,16 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="202.0" layoutY="78.0" prefHeight="35.0" prefWidth="79.0" text="Doctors List">
+      <Label layoutX="497.0" layoutY="83.0" prefHeight="35.0" prefWidth="79.0" text="Doctors List">
          <font>
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
       </Label>
       <HBox layoutY="549.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" />
+      <TextField fx:id="searchID" layoutX="556.0" layoutY="127.0" prefHeight="26.0" prefWidth="87.0" promptText="search by ID" />
+      <TextField fx:id="searchSpec" layoutX="656.0" layoutY="128.0" promptText="search by specialization" />
+      <Button fx:id="searchButton" layoutX="818.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Search" />
+      <TextField layoutX="266.0" layoutY="128.0" prefHeight="26.0" prefWidth="194.0" promptText="Enter ID of Doctor to be Removed" />
+      <Button fx:id="searchButton1" layoutX="470.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Remove" />
    </children>
 </AnchorPane>
