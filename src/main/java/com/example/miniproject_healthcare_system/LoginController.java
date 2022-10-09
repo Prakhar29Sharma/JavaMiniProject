@@ -11,10 +11,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+import java.io.FileWriter;
 
 public class LoginController {
     private Stage stage;
@@ -67,6 +70,30 @@ public class LoginController {
 
     String usernameText, passwordText;
 
+    public static void appendStrToFile(String fileName,
+                                       String str)
+    {
+        // Try block to check for exceptions
+        try {
+
+            // Open given file in append mode by creating an
+            // object of BufferedWriter class
+            BufferedWriter out = new BufferedWriter(
+                    new FileWriter(fileName, true));
+            // Writing on output stream
+            out.write(str);
+            // Closing the connection
+            out.close();
+        }
+
+        // Catch block to handle the exceptions
+        catch (IOException e) {
+
+            // Display message when exception occurs
+            System.out.println("exception occurred" + e);
+        }
+    }
+
     @FXML
     void switchToUserRegistration(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("UserRegistration.fxml"));
@@ -107,6 +134,14 @@ public class LoginController {
                             warningLabel2.setText("invalid username or password!");
                         } else {
                             System.out.println("Access Granted!");
+
+                            LocalDateTime localDateTime = LocalDateTime.now();
+                            DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                            String formattedDate = localDateTime.format(myFormatObj);
+                            String log = System.lineSeparator() + "username : " + usernameText + ", date-time : " + formattedDate;
+                            String fileName = "logs.txt";
+                            appendStrToFile(fileName, log);
+
                             DashboardController.setUsername(usernameText);
                             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
                             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
