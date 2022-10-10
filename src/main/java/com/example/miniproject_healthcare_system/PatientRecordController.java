@@ -159,6 +159,8 @@ public class PatientRecordController implements Initializable {
             System.out.println(e);
         }
 
+        choiceBox.getItems().addAll("patient_id", "city", "gender");
+
         patientID.setCellValueFactory(new PropertyValueFactory<patients, Integer>("patient_id"));
         patientName.setCellValueFactory(new PropertyValueFactory<patients, String>("Name"));
         phoneNum.setCellValueFactory(new PropertyValueFactory<patients, String>("ph_no"));

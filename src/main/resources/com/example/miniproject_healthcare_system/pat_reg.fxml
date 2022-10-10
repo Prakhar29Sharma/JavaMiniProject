@@ -12,7 +12,7 @@
       <AnchorPane layoutX="127.0" layoutY="47.0" prefHeight="506.0" prefWidth="646.0" style="-fx-background-color: #F8F8FF;">
          <children>
             <TextField fx:id="phno" layoutX="127.0" layoutY="172.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your phone number" />
-            <Button fx:id="registerButton" layoutX="220.0" layoutY="391.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" text="Register" textFill="WHITE" />
+            <Button fx:id="registerButton" layoutX="220.0" layoutY="391.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="37.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" text="Register" textFill="WHITE" />
             <Label alignment="CENTER" layoutX="241.0" layoutY="14.0" prefHeight="27.0" prefWidth="162.0" text="Patient Registration" textFill="#a617ff">
                <font>
                   <Font size="18.0" />
