@@ -46,7 +46,7 @@ public class DashboardController implements Initializable {
 
     Timeline timeline;
 
-    public  void setUser() {
+    public void setUser() {
         String greetUser = "Hello, " + username;
         userLabel.setText(greetUser);
     }
@@ -113,9 +113,6 @@ public class DashboardController implements Initializable {
     }
 
 
-
-
-
     public void time() {
          timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();
@@ -134,11 +131,6 @@ public class DashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //time();
         try {
-            /*LocalDate date = LocalDate.now();
-            String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-            dateLabel = new Label(formattedDate);
-            dateLabel.setText(formattedDate);
-             */
             time();
             setUser();
             totalDoctor.setText(JavaDatabaseConnector.getTotalDoc());
@@ -146,7 +138,6 @@ public class DashboardController implements Initializable {
             System.out.println(e);
         }
     }
-
 
 
 

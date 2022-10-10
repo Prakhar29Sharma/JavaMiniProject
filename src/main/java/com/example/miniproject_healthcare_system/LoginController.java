@@ -143,6 +143,7 @@ public class LoginController {
                             appendStrToFile(fileName, log);
 
                             DashboardController.setUsername(usernameText);
+
                             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
                             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                             scene = new Scene(fxmlLoader.load());

@@ -89,6 +89,15 @@ public class PatientRecordController implements Initializable {
         stage.show();
     }
 
+    public void switchToPatientReg(ActionEvent event) throws IOException {
+        timeline.stop();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("pat_reg.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void time() {
          timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();
