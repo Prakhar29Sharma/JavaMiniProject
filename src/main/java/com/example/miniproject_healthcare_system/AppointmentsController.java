@@ -101,7 +101,6 @@ public class AppointmentsController implements Initializable {
             String formatTime1 = date1.format(formatTime);
             dateLabel.setText(formatDate);
             timeLabel.setText(formatTime1);
-            System.out.println("Appointment Date and Time");
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();

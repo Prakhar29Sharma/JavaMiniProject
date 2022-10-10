@@ -17,6 +17,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.EventObject;
@@ -58,6 +59,12 @@ public class DoctorController implements Initializable {
     private Button searchButton;
 
     @FXML
+    private Button removeButton;
+
+    @FXML
+    private TextField idField;
+
+    @FXML
     private TextField searchID;
 
     @FXML
@@ -96,7 +103,6 @@ public class DoctorController implements Initializable {
             String formatTime1 = date1.format(formatTime);
             dateLabel.setText(formatDate);
             timeLabel.setText(formatTime1);
-            System.out.println("Doctor Date and Time");
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
@@ -131,7 +137,20 @@ public class DoctorController implements Initializable {
         });
     }
 
-
+    public void onDelete(ActionEvent event) {
+        removeButton.setOnAction(e -> {
+            String id = idField.getText();
+            if(id.equals("")) {
+                System.out.println("id Field is empty!");
+            } else {
+                try {
+                    JavaDatabaseConnector.deleteDoctor(id);
+                } catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+            }
+        });
+    }
 
     private Stage stage;
     private Scene scene;

@@ -133,6 +133,6 @@
       <TextField fx:id="searchSpec" layoutX="656.0" layoutY="128.0" promptText="search by specialization" />
       <Button fx:id="searchButton" layoutX="818.0" layoutY="128.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="67.0" text="Search" />
       <TextField fx:id="idField" layoutX="266.0" layoutY="128.0" prefHeight="26.0" prefWidth="194.0" promptText="Enter ID of Doctor to be Removed" />
-      <Button fx:id="removeButton" layoutX="470.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Remove" />
+      <Button fx:id="removeButton" layoutX="470.0" layoutY="128.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="67.0" text="Remove" />
    </children>
 </AnchorPane>

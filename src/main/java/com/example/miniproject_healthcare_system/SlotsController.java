@@ -97,7 +97,7 @@ public class SlotsController implements Initializable {
             String formatTime1 = date1.format(formatTime);
             dateLabel.setText(formatDate);
             timeLabel.setText(formatTime1);
-             System.out.println("Slots Date and Time");
+
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();

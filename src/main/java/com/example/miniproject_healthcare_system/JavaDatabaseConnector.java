@@ -73,6 +73,17 @@ class JavaDatabaseConnector {
         }
     }
 
+    static void deleteDoctor(String id) throws SQLException {
+        int doc_id = Integer.parseInt(id);
+        String query = "UPDATE `ams`.`doctor` SET `active` = 0 WHERE `doctor_id` = " + doc_id + ";";
+        System.out.println(query);
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        int status = preparedStatement.executeUpdate();
+        if(status!=0) {
+            System.out.println("Doctor Deleted Successfully!");
+        }
+    }
+
 
     public static ObservableList<doctors> getDataDoctor() {
         ObservableList<doctors> list = FXCollections.observableArrayList();

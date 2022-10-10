@@ -98,7 +98,7 @@ public class PatientRecordController implements Initializable {
             String formatTime1 = date1.format(formatTime);
             dateLabel.setText(formatDate);
             timeLabel.setText(formatTime1);
-             System.out.println("Patient Rec Date and Time");
+
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();

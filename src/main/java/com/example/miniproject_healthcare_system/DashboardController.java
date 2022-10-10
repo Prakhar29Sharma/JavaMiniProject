@@ -43,7 +43,7 @@ public class DashboardController implements Initializable {
 
     Timeline timeline;
 
-    public  void setUser(){
+    public  void setUser() {
         String greetUser = "Hello, " + username;
         userLabel.setText(greetUser);
     }
@@ -120,7 +120,6 @@ public class DashboardController implements Initializable {
             String formatTime1 = date1.format(formatTime);
             dateLabel.setText(formatDate);
             timeLabel.setText(formatTime1);
-            System.out.println("Dashboard Date and Time");
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
