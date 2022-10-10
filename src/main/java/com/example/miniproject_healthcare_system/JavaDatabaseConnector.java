@@ -88,11 +88,22 @@ class JavaDatabaseConnector {
         String query = "SELECT COUNT(doctor_id) AS 'count' FROM ams.doctor WHERE active = 1;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
-        String id = null;
+        String count = null;
         while(resultSet.next()) {
-            id = resultSet.getString("count");
+            count = resultSet.getString("count");
         }
-        return id;
+        return count;
+    }
+
+    public static String getTotalPatients() throws SQLException {
+        String query = "SELECT COUNT(patient_id) AS 'count' FROM ams.patient;";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        String count = null;
+        while(resultSet.next()) {
+            count = resultSet.getString("count");
+        }
+        return count;
     }
 
 

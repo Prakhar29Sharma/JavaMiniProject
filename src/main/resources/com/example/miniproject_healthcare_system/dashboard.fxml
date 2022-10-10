@@ -168,7 +168,7 @@
                   <Image url="@media/Notepad.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="0">
+            <Label fx:id="totalPatient" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="33.0" prefWidth="36.0" text="0">
                <font>
                   <Font size="18.0" />
                </font>
