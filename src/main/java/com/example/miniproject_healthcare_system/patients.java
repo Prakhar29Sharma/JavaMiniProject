@@ -1,14 +1,17 @@
 package com.example.miniproject_healthcare_system;
 
+import javafx.collections.ObservableList;
+
 public class patients {
     int patient_id;
-    String firstName, lastName,phone_o,email,city,cityArea,gender;
+    String Name ,ph_no,email,city,cityArea,gender;
 
-    public patients(int patient_id, String firstName, String lastName, String phone_o, String email, String city, String cityArea, String gender) {
+
+
+    public patients(int patient_id, String name, String ph_no, String email, String city, String cityArea, String gender) {
         this.patient_id = patient_id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phone_o = phone_o;
+        Name = name;
+        this.ph_no = ph_no;
         this.email = email;
         this.city = city;
         this.cityArea = cityArea;
@@ -23,28 +26,20 @@ public class patients {
         this.patient_id = patient_id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPh_no() {
+        return ph_no;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPhone_o() {
-        return phone_o;
-    }
-
-    public void setPhone_o(String phone_o) {
-        this.phone_o = phone_o;
+    public void setPh_no(String ph_no) {
+        this.ph_no = ph_no;
     }
 
     public String getEmail() {

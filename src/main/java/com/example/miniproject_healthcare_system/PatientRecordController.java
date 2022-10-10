@@ -3,13 +3,15 @@ package com.example.miniproject_healthcare_system;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -24,16 +26,50 @@ public class PatientRecordController implements Initializable {
     private Scene scene;
 
     @FXML
-    Label timeLabel;
+    private Button addPatientButton;
 
     @FXML
-    Label dateLabel;
-
+    private ChoiceBox<String> choiceBox;
 
     @FXML
-    Label userLabel;
+    private TableColumn<patients, String> city;
+
+    @FXML
+    private Label dateLabel;
+
+    @FXML
+    private TableColumn<patients, String> email;
+
+    @FXML
+    private TableColumn<patients, String> gender;
+
+    @FXML
+    private TableColumn<patients, Integer> patientID;
+
+    @FXML
+    private TableColumn<patients, String> patientName;
+
+    @FXML
+    private TableView<patients> patientTable;
+
+    @FXML
+    private TableColumn<patients, String> phoneNum;
+
+    @FXML
+    private Button searchButton;
+
+    @FXML
+    private TextField searchField;
+
+    @FXML
+    private Label timeLabel;
+
+    @FXML
+    private Label userLabel;
 
     Timeline timeline;
+
+    ObservableList<patients> listM = JavaDatabaseConnector.getDataPatients();
 
 
     public void switchToLogin(ActionEvent event) throws IOException {
@@ -122,6 +158,15 @@ public class PatientRecordController implements Initializable {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+        patientID.setCellValueFactory(new PropertyValueFactory<patients, Integer>("patient_id"));
+        patientName.setCellValueFactory(new PropertyValueFactory<patients, String>("Name"));
+        phoneNum.setCellValueFactory(new PropertyValueFactory<patients, String>("ph_no"));
+        email.setCellValueFactory(new PropertyValueFactory<patients, String>("email"));
+        city.setCellValueFactory(new PropertyValueFactory<patients, String>("city"));
+        gender.setCellValueFactory(new PropertyValueFactory<patients, String>("gender"));
+
+        patientTable.setItems(listM);
 
     }
 }
