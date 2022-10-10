@@ -184,5 +184,24 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    public static ObservableList<String> getDoctorIDs() throws SQLException{
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `doctor`.`doctor_id` FROM `ams`.`doctor`");
+        ObservableList data = FXCollections.observableArrayList();
+        while(resultSet.next()) {
+            data.add(resultSet.getString("doctor_id"));
+        }
+        return data;
+    }
+
+    public static ObservableList<String> getPatientIDs() throws SQLException {
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `patient`.`patient_id` FROM `ams`.`patient`");
+        ObservableList data = FXCollections.observableArrayList();
+        while(resultSet.next()) {
+            data.add(resultSet.getString("patient_id"));
+        }
+        return data;
+    }
+
+
 
 }
