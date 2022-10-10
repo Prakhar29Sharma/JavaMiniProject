@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class PatientRegController implements Initializable {
@@ -63,9 +64,23 @@ public class PatientRegController implements Initializable {
             String last_name = lname.getText();
             String phone_num = phno.getText();
             String email_ = email.getText();
-            String city_ = city.getId();
+            String city_ = city.getText();
+            String cityA = cityArea.getText();
             String gender = (String) genderChoice.getValue();
 
+            if(!first_name.equals("") && !last_name.equals("") && !phone_num.equals("") && !email_.equals("") && !city_.equals("") && !gender.equals(null)) {
+                if(UserRegistrationController.validateEmail(email_) == true) {
+                    // insert user
+                    try {
+                        JavaDatabaseConnector.insertPatient(first_name, last_name, phone_num, email_, city_, cityA, gender);
+                        confirmationLabel.setText("Patient Registered Successfully");
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            } else {
+                // null check cases
+            }
         });
     }
 

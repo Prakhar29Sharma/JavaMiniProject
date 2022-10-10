@@ -73,6 +73,17 @@ class JavaDatabaseConnector {
         }
     }
 
+    static void insertPatient(String fname, String lname, String phone_num, String email, String city,String cityArea, String gender) throws SQLException {
+        String query = "INSERT INTO `ams`.`patient` (`firstName`, `lastName`, `phone_no`, `email`, `city`, `cityArea`, `gender`) VALUES ('"+fname+"', '"+ lname + "', '"+ phone_num + "', '" + email + "', '" + city + "', '"+ cityArea + "','" + gender + "');";
+        System.out.println(query);
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        int status = preparedStatement.executeUpdate();
+        if(status!=0) {
+            System.out.println("Patient Data Inserted Successfully!");
+        }
+
+    }
+
     static void deleteDoctor(String id) throws SQLException {
         int doc_id = Integer.parseInt(id);
         String query = "UPDATE `ams`.`doctor` SET `active` = 0 WHERE `doctor_id` = " + doc_id + ";";
