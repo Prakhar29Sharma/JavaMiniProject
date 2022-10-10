@@ -145,6 +145,8 @@ public class DoctorController implements Initializable {
             } else {
                 try {
                     JavaDatabaseConnector.deleteDoctor(id);
+                    listM = JavaDatabaseConnector.getDataDoctor();
+                    doctorTable.setItems(listM);
                 } catch (SQLException ex) {
                     System.out.println(ex);
                 }

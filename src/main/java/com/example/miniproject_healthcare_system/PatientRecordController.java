@@ -109,7 +109,7 @@ public class PatientRecordController implements Initializable {
 
         try {
             time();
-            userLabel.setText(DashboardController.getUsername());
+            userLabel.setText("Hello, " + DashboardController.getUsername());
         } catch (Exception e) {
             System.out.println(e);
         }

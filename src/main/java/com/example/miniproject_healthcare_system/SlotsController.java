@@ -105,13 +105,11 @@ public class SlotsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         try {
             time();
-            userLabel.setText(DashboardController.getUsername());
+            userLabel.setText("Hello, "+DashboardController.getUsername());
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 }
