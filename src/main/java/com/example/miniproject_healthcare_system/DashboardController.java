@@ -37,6 +37,9 @@ public class DashboardController implements Initializable {
     Label dateLabel;
 
     @FXML
+    Label totalDoctor;
+
+    @FXML
     Label userLabel;
 
     static String username;
@@ -111,6 +114,8 @@ public class DashboardController implements Initializable {
 
 
 
+
+
     public void time() {
          timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();
@@ -136,6 +141,7 @@ public class DashboardController implements Initializable {
              */
             time();
             setUser();
+            totalDoctor.setText(JavaDatabaseConnector.getTotalDoc());
         } catch (Exception e) {
             System.out.println(e);
         }

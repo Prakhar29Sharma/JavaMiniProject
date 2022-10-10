@@ -84,6 +84,17 @@ class JavaDatabaseConnector {
         }
     }
 
+    public static String getTotalDoc() throws SQLException {
+        String query = "SELECT COUNT(doctor_id) AS 'count' FROM ams.doctor WHERE active = 1;";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        String id = null;
+        while(resultSet.next()) {
+            id = resultSet.getString("count");
+        }
+        return id;
+    }
+
 
     public static ObservableList<doctors> getDataDoctor() {
         ObservableList<doctors> list = FXCollections.observableArrayList();
