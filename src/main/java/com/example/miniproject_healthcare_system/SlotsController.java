@@ -141,7 +141,7 @@ public class SlotsController implements Initializable {
         }
     }
 
-    public void onShowClick(ActionEvent event) {
+    /*public void onShowClick(ActionEvent event) {
         show.setOnAction(e -> {
             try {
                 setDoctorName();
@@ -152,12 +152,14 @@ public class SlotsController implements Initializable {
         });
     }
 
+     */
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             time();
-            doctorIDs.setItems(JavaDatabaseConnector.getDoctorIDs());
-            patientIDs.setItems(JavaDatabaseConnector.getPatientIDs());
+            //doctorIDs.setItems(JavaDatabaseConnector.getDoctorIDs());
+            //patientIDs.setItems(JavaDatabaseConnector.getPatientIDs());
             userLabel.setText("Hello, " + DashboardController.getUsername());
         } catch (Exception e) {
             System.out.println(e);
