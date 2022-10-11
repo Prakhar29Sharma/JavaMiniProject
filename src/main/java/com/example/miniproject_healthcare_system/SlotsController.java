@@ -9,12 +9,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -32,6 +35,21 @@ public class SlotsController implements Initializable {
 
     @FXML
     Label userLabel;
+
+    @FXML
+    private ChoiceBox<String> doctorIDs;
+
+    @FXML
+    private ChoiceBox<String> patientIDs;
+
+    @FXML
+    private Label doctorName;
+
+    @FXML
+    private Label patientName;
+
+    @FXML
+    private Button show;
 
     Timeline timeline;
 
@@ -103,11 +121,44 @@ public class SlotsController implements Initializable {
         timeline.play();
     }
 
+    public void setDoctorName() throws SQLException {
+        if(doctorIDs.getValue().equals("")) {
+            System.out.println("doctor id not specified");
+        } else {
+            int id = Integer.parseInt(doctorIDs.getValue());
+            String name = JavaDatabaseConnector.getDoctorNameByID(id);
+            doctorName.setText(name);
+        }
+    }
+
+    public void setPatientName() throws SQLException {
+        if(patientIDs.getValue().equals("")) {
+            System.out.println("patient id not specified");
+        } else {
+            int id = Integer.parseInt(patientIDs.getValue());
+            String name = JavaDatabaseConnector.getPatientNameByID(id);
+            patientName.setText(name);
+        }
+    }
+
+    public void onShowClick(ActionEvent event) {
+        show.setOnAction(e -> {
+            try {
+                setDoctorName();
+                setPatientName();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             time();
-            userLabel.setText("Hello, "+DashboardController.getUsername());
+            doctorIDs.setItems(JavaDatabaseConnector.getDoctorIDs());
+            patientIDs.setItems(JavaDatabaseConnector.getPatientIDs());
+            userLabel.setText("Hello, " + DashboardController.getUsername());
         } catch (Exception e) {
             System.out.println(e);
         }

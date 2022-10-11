@@ -185,7 +185,7 @@ class JavaDatabaseConnector {
     }
 
     public static ObservableList<String> getDoctorIDs() throws SQLException{
-        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `doctor`.`doctor_id` FROM `ams`.`doctor`");
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `doctor`.`doctor_id` FROM `ams`.`doctor` WHERE `doctor`.`active` = 1;");
         ObservableList data = FXCollections.observableArrayList();
         while(resultSet.next()) {
             data.add(resultSet.getString("doctor_id"));
@@ -202,6 +202,21 @@ class JavaDatabaseConnector {
         return data;
     }
 
+    public static String getDoctorNameByID(int id) throws SQLException {
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `doctor`.`firstName` FROM `ams`.`doctor` WHERE `doctor`.`active` = 1 AND `doctor`.`doctor_id` = " + id + ";");
+        String name = "";
+        while (resultSet.next()) {
+            name = resultSet.getString("firstName");
+        }
+        return name;
+    }
 
-
+    public static String getPatientNameByID(int id) throws SQLException {
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `patient`.`firstName` FROM ams.patient WHERE `patient`.`patient_id` = "+ id +";");
+        String name = "";
+        while (resultSet.next()) {
+            name = resultSet.getString("firstName");
+        }
+        return name;
+    }
 }

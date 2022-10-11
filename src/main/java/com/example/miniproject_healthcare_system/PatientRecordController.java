@@ -149,6 +149,15 @@ public class PatientRecordController implements Initializable {
         timeline.play();
     }
 
+
+    public void onClickSearch(ActionEvent event){
+        searchButton.setOnAction(e -> {
+            String specifiedField = choiceBox.getValue();
+
+
+        });
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
