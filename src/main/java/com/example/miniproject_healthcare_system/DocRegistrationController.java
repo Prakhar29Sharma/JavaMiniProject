@@ -62,7 +62,7 @@ public class DocRegistrationController {
 
             if(first!="" && last!="" && spec!="" && qual!="" && cityAd!="" && phone!="") {
                 try {
-                    JavaDatabaseConnector.insertDoctor(first, last, qual, spec, phone, cityAd);
+                    JavaDatabaseConnector.insertDoctor("Dr. "+first, last, qual, spec, phone, cityAd);
                     confirmationLabel.setText("Added Doctor Successfully!");
                 } catch (SQLException ex) {
                     System.out.println(ex);

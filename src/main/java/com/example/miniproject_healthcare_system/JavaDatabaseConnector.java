@@ -19,6 +19,7 @@ class JavaDatabaseConnector {
             throw new RuntimeException(e);
         }
     }
+    /* database connection code ends here */
 
     /* validateUser(): checks in database if user already exist */
     /* helpful to avoid users with same username or maintains uniqueness of username */
@@ -52,6 +53,7 @@ class JavaDatabaseConnector {
         return 1;
     }
 
+    /* InsertUser() -> inserts user data into database */
     static void InsertUser(String username, String email, String password) throws SQLException {
 
         String query = "INSERT INTO `ams`.`receptionist` (`username`,`email`,`password`) VALUES ('" + username + "','" + email + "','" + password + "')";
@@ -63,6 +65,7 @@ class JavaDatabaseConnector {
         }
     }
 
+    /* insertDoctor() -> inserted doctor into database */
     static void insertDoctor(String fname, String lname, String qualification, String specialization, String phno, String city) throws SQLException {
         String query = "INSERT INTO `ams`.`doctor` (`firstName`,`lastName`,`qualification`,`specialization`,`phone_no`,`city`,`active`) VALUES ('"+ fname + "', '" + lname + "', '" + qualification + "', '" + specialization + "', '" + phno +"', '" + city + "', " + 1 + ");";
         System.out.println(query);
@@ -73,6 +76,7 @@ class JavaDatabaseConnector {
         }
     }
 
+    /* insert patient details into database */
     static void insertPatient(String fname, String lname, String phone_num, String email, String city,String cityArea, String gender) throws SQLException {
         String query = "INSERT INTO `ams`.`patient` (`firstName`, `lastName`, `phone_no`, `email`, `city`, `cityArea`, `gender`) VALUES ('"+fname+"', '"+ lname + "', '"+ phone_num + "', '" + email + "', '" + city + "', '"+ cityArea + "','" + gender + "');";
         System.out.println(query);
@@ -83,6 +87,8 @@ class JavaDatabaseConnector {
         }
 
     }
+
+    /* deleteDoctor : method for removing a doctor from table view by setting active to 0 */
 
     static void deleteDoctor(String id) throws SQLException {
         int doc_id = Integer.parseInt(id);
@@ -95,6 +101,8 @@ class JavaDatabaseConnector {
         }
     }
 
+    /* getTotalDoc() : counts total active doctors present in database */
+
     public static String getTotalDoc() throws SQLException {
         String query = "SELECT COUNT(doctor_id) AS 'count' FROM ams.doctor WHERE active = 1;";
         Statement statement = connection.createStatement();
@@ -106,6 +114,7 @@ class JavaDatabaseConnector {
         return count;
     }
 
+    /* counts total patient present in database */
     public static String getTotalPatients() throws SQLException {
         String query = "SELECT COUNT(patient_id) AS 'count' FROM ams.patient;";
         Statement statement = connection.createStatement();
@@ -117,6 +126,7 @@ class JavaDatabaseConnector {
         return count;
     }
 
+    /* get doctor details for the table view */
 
     public static ObservableList<doctors> getDataDoctor() {
         ObservableList<doctors> list = FXCollections.observableArrayList();
@@ -134,6 +144,7 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* get patient details for patient table view */
     public static ObservableList<patients> getDataPatients() {
         ObservableList<patients> list = FXCollections.observableArrayList();
         try {
@@ -152,6 +163,7 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* filters patient by patient id and used in table view search */
     public static ObservableList<patients> getDataPatientsByID(int id) {
         ObservableList<patients> list = FXCollections.observableArrayList();
         try {
@@ -170,6 +182,7 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* filters patients by city and used in table view search */
     public static ObservableList<patients> getDataPatientsByCity(String city) {
         ObservableList<patients> list = FXCollections.observableArrayList();
         try {
@@ -188,6 +201,7 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* filters patient by gender and used in table view search */
     public static ObservableList<patients> getDataPatientsByGender(String gender) {
         ObservableList<patients> list = FXCollections.observableArrayList();
         try {
@@ -206,8 +220,7 @@ class JavaDatabaseConnector {
         return list;
     }
 
-
-
+    /* filters doctors by specialization and used in table view search */
     public static ObservableList<doctors> getDoctorBySpecialization(String spec) {
         ObservableList<doctors> list = FXCollections.observableArrayList();
         try {
@@ -224,6 +237,7 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* filters doctors by id and used in table view search */
     public static ObservableList<doctors> getDoctorByID(int id) {
         ObservableList<doctors> list = FXCollections.observableArrayList();
         try {
@@ -240,6 +254,7 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* returns list of doctors id who are active (used for choice box) */
     public static ObservableList<String> getDoctorIDs() throws SQLException{
         ResultSet resultSet = connection.createStatement().executeQuery("SELECT `doctor`.`doctor_id` FROM `ams`.`doctor` WHERE `doctor`.`active` = 1;");
         ObservableList data = FXCollections.observableArrayList();
@@ -249,6 +264,7 @@ class JavaDatabaseConnector {
         return data;
     }
 
+    /* returns list of patient id from patient table (used for choice box) */
     public static ObservableList<String> getPatientIDs() throws SQLException {
         ResultSet resultSet = connection.createStatement().executeQuery("SELECT `patient`.`patient_id` FROM `ams`.`patient`");
         ObservableList data = FXCollections.observableArrayList();
@@ -258,6 +274,17 @@ class JavaDatabaseConnector {
         return data;
     }
 
+    /* returns list of possible time slots from database (used for choice box) */
+    public static ObservableList<String> getTimeSlots() throws SQLException {
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `time_slots`.`time_slot` FROM `ams`.`time_slots`;");
+        ObservableList data = FXCollections.observableArrayList();
+        while(resultSet.next()) {
+            data.add(resultSet.getString("time_slot"));
+        }
+        return data;
+    }
+
+    /* gets doctor name by doctor id */
     public static String getDoctorNameByID(int id) throws SQLException {
         ResultSet resultSet = connection.createStatement().executeQuery("SELECT `doctor`.`firstName` FROM `ams`.`doctor` WHERE `doctor`.`active` = 1 AND `doctor`.`doctor_id` = " + id + ";");
         String name = "";
@@ -267,6 +294,7 @@ class JavaDatabaseConnector {
         return name;
     }
 
+    /* gets patient name by patient id */
     public static String getPatientNameByID(int id) throws SQLException {
         ResultSet resultSet = connection.createStatement().executeQuery("SELECT `patient`.`firstName` FROM ams.patient WHERE `patient`.`patient_id` = "+ id +";");
         String name = "";
@@ -275,4 +303,5 @@ class JavaDatabaseConnector {
         }
         return name;
     }
+
 }
