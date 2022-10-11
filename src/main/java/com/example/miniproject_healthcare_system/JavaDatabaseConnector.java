@@ -152,6 +152,62 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    public static ObservableList<patients> getDataPatientsByID(int id) {
+        ObservableList<patients> list = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT `patient`.`patient_id`, `patient`.`firstName`, `patient`.`lastName`, `patient`.`phone_no`, `patient`.`email`, `patient`.`city`, `patient`.`gender` FROM `ams`.`patient` WHERE `patient`.`patient_id` = "+ id + " ;";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while(rs.next()) {
+                //int patient_id;
+                //String firstName, lastName,phone_o,email,city,cityArea,gender;
+                list.add(new patients(Integer.parseInt(rs.getString("patient_id")), rs.getString("firstName") + " " + rs.getString("lastName"), rs.getString("phone_no"), rs.getString("email"), rs.getString("city"), "", rs.getString("gender")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+    public static ObservableList<patients> getDataPatientsByCity(String city) {
+        ObservableList<patients> list = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT `patient`.`patient_id`, `patient`.`firstName`, `patient`.`lastName`, `patient`.`phone_no`, `patient`.`email`, `patient`.`city`, `patient`.`gender` FROM `ams`.`patient` WHERE `patient`.`city` = '"+ city + "' ;";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while(rs.next()) {
+                //int patient_id;
+                //String firstName, lastName,phone_o,email,city,cityArea,gender;
+                list.add(new patients(Integer.parseInt(rs.getString("patient_id")), rs.getString("firstName") + " " + rs.getString("lastName"), rs.getString("phone_no"), rs.getString("email"), rs.getString("city"), "", rs.getString("gender")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+    public static ObservableList<patients> getDataPatientsByGender(String gender) {
+        ObservableList<patients> list = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT `patient`.`patient_id`, `patient`.`firstName`, `patient`.`lastName`, `patient`.`phone_no`, `patient`.`email`, `patient`.`city`, `patient`.`gender` FROM `ams`.`patient` WHERE `patient`.`gender` = '"+ gender + "' ;";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while(rs.next()) {
+                //int patient_id;
+                //String firstName, lastName,phone_o,email,city,cityArea,gender;
+                list.add(new patients(Integer.parseInt(rs.getString("patient_id")), rs.getString("firstName") + " " + rs.getString("lastName"), rs.getString("phone_no"), rs.getString("email"), rs.getString("city"), "", rs.getString("gender")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+
+
     public static ObservableList<doctors> getDoctorBySpecialization(String spec) {
         ObservableList<doctors> list = FXCollections.observableArrayList();
         try {

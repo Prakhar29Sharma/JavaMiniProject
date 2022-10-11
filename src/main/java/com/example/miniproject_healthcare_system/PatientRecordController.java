@@ -153,8 +153,26 @@ public class PatientRecordController implements Initializable {
     public void onClickSearch(ActionEvent event){
         searchButton.setOnAction(e -> {
             String specifiedField = choiceBox.getValue();
-
-
+            String field = searchField.getText();
+            if(field.equals("")) {
+                listM = JavaDatabaseConnector.getDataPatients();
+                patientTable.setItems(listM);
+            }
+            if(specifiedField.equals("")) {
+                listM = JavaDatabaseConnector.getDataPatients();
+                patientTable.setItems(listM);
+            } else {
+                if(specifiedField.equals("gender")) {
+                    listM = JavaDatabaseConnector.getDataPatientsByGender(field);
+                    patientTable.setItems(listM);
+                } else if (specifiedField.equals("patient_id")) {
+                    listM = JavaDatabaseConnector.getDataPatientsByID(Integer.parseInt(field));
+                    patientTable.setItems(listM);
+                } else if (specifiedField.equals("city")) {
+                    listM = JavaDatabaseConnector.getDataPatientsByCity(field);
+                    patientTable.setItems(listM);
+                }
+            }
         });
     }
 

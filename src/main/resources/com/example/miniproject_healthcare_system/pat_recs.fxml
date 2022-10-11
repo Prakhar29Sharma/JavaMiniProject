@@ -131,6 +131,6 @@
       <Button fx:id="addPatientButton" layoutX="260.0" layoutY="85.0" mnemonicParsing="false" onAction="#switchToPatientReg" text="add patient" />
       <TextField fx:id="searchField" layoutX="657.0" layoutY="85.0" promptText=" " />
       <ChoiceBox fx:id="choiceBox" layoutX="539.0" layoutY="84.0" prefHeight="26.0" prefWidth="110.0" />
-      <Button fx:id="searchButton" layoutX="813.0" layoutY="85.0" mnemonicParsing="false" text="Search" />
+      <Button fx:id="searchButton" layoutX="813.0" layoutY="85.0" mnemonicParsing="false" onAction="#onClickSearch" text="Search" />
    </children>
 </AnchorPane>
