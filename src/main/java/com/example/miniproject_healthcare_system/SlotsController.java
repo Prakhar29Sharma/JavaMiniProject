@@ -40,13 +40,7 @@ public class SlotsController implements Initializable {
     private ChoiceBox<String> doctorIDs;
 
     @FXML
-    private ChoiceBox<String> patientIDs;
-
-    @FXML
     private Label doctorName;
-
-    @FXML
-    private Label patientName;
 
     @FXML
     private Button show;
@@ -121,6 +115,7 @@ public class SlotsController implements Initializable {
         timeline.play();
     }
 
+
     public void setDoctorName() throws SQLException {
         if(doctorIDs.getValue().equals("")) {
             System.out.println("doctor id not specified");
@@ -131,6 +126,7 @@ public class SlotsController implements Initializable {
         }
     }
 
+    /*
     public void setPatientName() throws SQLException {
         if(patientIDs.getValue().equals("")) {
             System.out.println("patient id not specified");
@@ -140,25 +136,24 @@ public class SlotsController implements Initializable {
             patientName.setText(name);
         }
     }
+     */
 
-    /*public void onShowClick(ActionEvent event) {
+
+    public void onShowClick(ActionEvent event) {
         show.setOnAction(e -> {
             try {
                 setDoctorName();
-                setPatientName();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
         });
     }
 
-     */
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             time();
-            //doctorIDs.setItems(JavaDatabaseConnector.getDoctorIDs());
+            doctorIDs.setItems(JavaDatabaseConnector.getDoctorIDs());
             //patientIDs.setItems(JavaDatabaseConnector.getPatientIDs());
             userLabel.setText("Hello, " + DashboardController.getUsername());
         } catch (Exception e) {
