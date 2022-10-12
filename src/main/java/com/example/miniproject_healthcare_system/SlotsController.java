@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -18,6 +19,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -32,6 +34,12 @@ public class SlotsController implements Initializable {
     @FXML
     Label dateLabel;
 
+    @FXML
+    Label showDateLabel;
+
+    @FXML
+    Label showTimeLabel;
+
 
     @FXML
     Label userLabel;
@@ -40,10 +48,19 @@ public class SlotsController implements Initializable {
     private ChoiceBox<String> doctorIDs;
 
     @FXML
+    private ChoiceBox<String> timeSlots;
+
+    @FXML
     private Label doctorName;
 
     @FXML
     private Button show;
+
+    @FXML
+    private DatePicker datePicker;
+
+    @FXML
+    private Button addSlotButton;
 
     Timeline timeline;
 
@@ -126,6 +143,17 @@ public class SlotsController implements Initializable {
         }
     }
 
+    public void setDateLabel() {
+        LocalDate date = datePicker.getValue();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        showDateLabel.setText(date.format(dateTimeFormatter));
+    }
+
+    public void setTimeSlotLabel() {
+        String timeSlot = timeSlots.getValue();
+        showTimeLabel.setText(timeSlot);
+    }
+
     /*
     public void setPatientName() throws SQLException {
         if(patientIDs.getValue().equals("")) {
@@ -138,14 +166,24 @@ public class SlotsController implements Initializable {
     }
      */
 
+    //patientIDs.setItems(JavaDatabaseConnector.getPatientIDs());
+
 
     public void onShowClick(ActionEvent event) {
         show.setOnAction(e -> {
             try {
                 setDoctorName();
+                setDateLabel();
+                setTimeSlotLabel();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
+        });
+    }
+
+    public void onAddSlots(ActionEvent event) {
+        addSlotButton.setOnAction(e -> {
+            // insert query
         });
     }
 
@@ -154,7 +192,7 @@ public class SlotsController implements Initializable {
         try {
             time();
             doctorIDs.setItems(JavaDatabaseConnector.getDoctorIDs());
-            //patientIDs.setItems(JavaDatabaseConnector.getPatientIDs());
+            timeSlots.setItems(JavaDatabaseConnector.getTimeSlots());
             userLabel.setText("Hello, " + DashboardController.getUsername());
         } catch (Exception e) {
             System.out.println(e);
