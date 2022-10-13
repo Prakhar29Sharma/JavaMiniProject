@@ -88,6 +88,17 @@ class JavaDatabaseConnector {
 
     }
 
+    /* insert available slots into database */
+    static void insertSlot(String time, String date, int doctor_id) throws SQLException {
+        String query = "INSERT INTO `ams`.`available_slots` (`time`, `date`, `doctor_id`) VALUES ('" + time + "','" + date + "'," + doctor_id + ");";
+        System.out.println(query);
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        int status = preparedStatement.executeUpdate();
+        if(status!=0) {
+            System.out.println("Slot Added Successfully!");
+        }
+    }
+
     /* deleteDoctor : method for removing a doctor from table view by setting active to 0 */
 
     static void deleteDoctor(String id) throws SQLException {
@@ -303,5 +314,6 @@ class JavaDatabaseConnector {
         }
         return name;
     }
+
 
 }

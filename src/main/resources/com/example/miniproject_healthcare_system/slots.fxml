@@ -42,7 +42,7 @@
       </ScrollPane>
       <Pane layoutX="710.0" layoutY="116.0" prefHeight="294.0" prefWidth="175.0">
          <children>
-            <Button fx:id="addSlotButton" layoutX="43.0" layoutY="253.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Add Slot" />
+            <Button fx:id="addSlotButton" layoutX="43.0" layoutY="253.0" mnemonicParsing="false" onAction="#onAddSlots" prefHeight="27.0" prefWidth="103.0" text="Add Slot" />
             <ChoiceBox fx:id="doctorIDs" layoutX="13.0" layoutY="14.0" prefWidth="150.0" />
             <Label layoutX="13.0" layoutY="49.0" text="Doctor Name : " />
             <Label layoutX="13.0" layoutY="108.0" text="Date : " />
@@ -52,7 +52,8 @@
             <DatePicker fx:id="datePicker" layoutX="14.0" layoutY="74.0" prefHeight="25.0" prefWidth="150.0" />
             <ChoiceBox fx:id="timeSlots" layoutX="13.0" layoutY="135.0" prefWidth="150.0" />
             <Label layoutX="15.0" layoutY="168.0" prefHeight="17.0" prefWidth="59.0" text="Time Slot :" />
-            <Label fx:id="showTimeLabel" layoutX="98.0" layoutY="168.0" />
+            <Label fx:id="showTimeLabel" layoutX="73.0" layoutY="168.0" prefHeight="17.0" prefWidth="91.0" />
+            <Button layoutX="119.0" layoutY="198.0" mnemonicParsing="false" onAction="#switchToSlots" text="clear" />
          </children>
       </Pane>
       <HBox prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
@@ -144,5 +145,6 @@
          </children>
       </VBox>
       <HBox layoutY="549.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" />
+      <Label fx:id="confirmationLabel" alignment="CENTER" layoutX="722.0" layoutY="420.0" prefHeight="18.0" prefWidth="150.0" style="-fx-text-fill: #50C878;" />
    </children>
 </AnchorPane>

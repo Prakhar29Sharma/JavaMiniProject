@@ -62,6 +62,9 @@ public class SlotsController implements Initializable {
     @FXML
     private Button addSlotButton;
 
+    @FXML
+    private Label confirmationLabel;
+
     Timeline timeline;
 
     public void switchToLogin(ActionEvent event) throws IOException {
@@ -183,7 +186,35 @@ public class SlotsController implements Initializable {
 
     public void onAddSlots(ActionEvent event) {
         addSlotButton.setOnAction(e -> {
-            // insert query
+            String doctorID = doctorIDs.getValue();
+            String timeSlot = timeSlots.getValue();
+            LocalDate localDate = datePicker.getValue();
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            String date = localDate.format(dateTimeFormatter);
+            if(!doctorID.equals("") && !timeSlot.equals("") && !date.equals("")) {
+                try {
+                    JavaDatabaseConnector.insertSlot(timeSlot, date, Integer.parseInt(doctorID));
+                    confirmationLabel.setText("Slot Added Successfully!");
+                } catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+            } else {
+                if(doctorID.equals("")) {
+
+                } else {
+
+                }
+                if(timeSlot.equals("")) {
+
+                } else {
+
+                }
+                if(date.equals("")) {
+
+                } else {
+
+                }
+            }
         });
     }
 
