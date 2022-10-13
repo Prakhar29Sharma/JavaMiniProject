@@ -174,6 +174,22 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    public static ObservableList<timeslot> getAvailableSlot() {
+        ObservableList<timeslot> list = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT `available_slots`.`time`, `available_slots`.`date`, `available_slots`.`doctor_id` FROM `ams`.`available_slots` WHERE `available_slots`.`appointment_status` = 0;";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while(rs.next()) {
+                list.add(new timeslot(rs.getString("date"), rs.getString("time"), Integer.parseInt(rs.getString("doctor_id"))));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
     /* filters patient by patient id and used in table view search */
     public static ObservableList<patients> getDataPatientsByID(int id) {
         ObservableList<patients> list = FXCollections.observableArrayList();

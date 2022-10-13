@@ -3,16 +3,15 @@ package com.example.miniproject_healthcare_system;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -64,6 +63,19 @@ public class SlotsController implements Initializable {
 
     @FXML
     private Label confirmationLabel;
+
+    @FXML
+    private TableColumn<timeslot, String> dateColumn;
+
+    @FXML
+    private TableColumn<timeslot, String> doctorIDColumn;
+
+    @FXML
+    private TableColumn<timeslot, String> timeColumn;
+
+    @FXML
+    private TableView<timeslot> availSlotsTable;
+
 
     Timeline timeline;
 
@@ -195,6 +207,8 @@ public class SlotsController implements Initializable {
                 try {
                     JavaDatabaseConnector.insertSlot(timeSlot, date, Integer.parseInt(doctorID));
                     confirmationLabel.setText("Slot Added Successfully!");
+                    listM = JavaDatabaseConnector.getAvailableSlot();
+                    availSlotsTable.setItems(listM);
                 } catch (SQLException ex) {
                     System.out.println(ex);
                 }
@@ -218,6 +232,8 @@ public class SlotsController implements Initializable {
         });
     }
 
+    ObservableList<timeslot> listM = JavaDatabaseConnector.getAvailableSlot();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -225,6 +241,13 @@ public class SlotsController implements Initializable {
             doctorIDs.setItems(JavaDatabaseConnector.getDoctorIDs());
             timeSlots.setItems(JavaDatabaseConnector.getTimeSlots());
             userLabel.setText("Hello, " + DashboardController.getUsername());
+
+            doctorIDColumn.setCellValueFactory(new PropertyValueFactory<timeslot, String>("doctor_id"));
+            dateColumn.setCellValueFactory(new PropertyValueFactory<timeslot, String>("date"));
+            timeColumn.setCellValueFactory(new PropertyValueFactory<timeslot, String>("time"));
+
+            availSlotsTable.setItems(listM);
+
         } catch (Exception e) {
             System.out.println(e);
         }
