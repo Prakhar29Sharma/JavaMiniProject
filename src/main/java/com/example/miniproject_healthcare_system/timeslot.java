@@ -2,12 +2,21 @@ package com.example.miniproject_healthcare_system;
 
 public class timeslot {
     String date, time;
-    int doctor_id;
+    int doctor_id, slot_id;
 
-    public timeslot(String date, String time, int doctor_id) {
+    public timeslot(int slot_id, String date, String time, int doctor_id) {
+        this.slot_id = slot_id;
         this.date = date;
         this.time = time;
         this.doctor_id = doctor_id;
+    }
+
+    public int getSlot_id() {
+        return slot_id;
+    }
+
+    public void setSlot_id(int slot_id) {
+        this.slot_id = slot_id;
     }
 
     public String getDate() {

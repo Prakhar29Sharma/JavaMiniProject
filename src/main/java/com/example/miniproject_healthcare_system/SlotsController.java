@@ -68,6 +68,9 @@ public class SlotsController implements Initializable {
     private TableColumn<timeslot, String> dateColumn;
 
     @FXML
+    private TableColumn<timeslot, Integer> slotID;
+
+    @FXML
     private TableColumn<timeslot, String> doctorIDColumn;
 
     @FXML
@@ -133,6 +136,7 @@ public class SlotsController implements Initializable {
     }
 
     public void switchToBookAppointment(ActionEvent event) throws IOException {
+        timeline.stop();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("bookAppointment.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
@@ -250,6 +254,7 @@ public class SlotsController implements Initializable {
             timeSlots.setItems(JavaDatabaseConnector.getTimeSlots());
             userLabel.setText("Hello, " + DashboardController.getUsername());
 
+            slotID.setCellValueFactory(new PropertyValueFactory<timeslot, Integer>("slot_id"));
             doctorIDColumn.setCellValueFactory(new PropertyValueFactory<timeslot, String>("doctor_id"));
             dateColumn.setCellValueFactory(new PropertyValueFactory<timeslot, String>("date"));
             timeColumn.setCellValueFactory(new PropertyValueFactory<timeslot, String>("time"));

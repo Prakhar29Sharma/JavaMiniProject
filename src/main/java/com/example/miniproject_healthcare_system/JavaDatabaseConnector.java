@@ -174,14 +174,15 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* return list of time slots from database */
     public static ObservableList<timeslot> getAvailableSlot() {
         ObservableList<timeslot> list = FXCollections.observableArrayList();
         try {
-            String query = "SELECT `available_slots`.`time`, `available_slots`.`date`, `available_slots`.`doctor_id` FROM `ams`.`available_slots` WHERE `available_slots`.`appointment_status` = 0;";
+            String query = "SELECT `available_slots`.`doc_schedule_id`,`available_slots`.`time`, `available_slots`.`date`, `available_slots`.`doctor_id` FROM `ams`.`available_slots` WHERE `available_slots`.`appointment_status` = 0;";
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while(rs.next()) {
-                list.add(new timeslot(rs.getString("date"), rs.getString("time"), Integer.parseInt(rs.getString("doctor_id"))));
+                list.add(new timeslot(Integer.parseInt(rs.getString("doc_schedule_id")),rs.getString("date"), rs.getString("time"), Integer.parseInt(rs.getString("doctor_id"))));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -189,6 +190,10 @@ class JavaDatabaseConnector {
 
         return list;
     }
+
+
+
+
 
     /* filters patient by patient id and used in table view search */
     public static ObservableList<patients> getDataPatientsByID(int id) {
@@ -287,6 +292,16 @@ class JavaDatabaseConnector {
         ObservableList data = FXCollections.observableArrayList();
         while(resultSet.next()) {
             data.add(resultSet.getString("doctor_id"));
+        }
+        return data;
+    }
+
+    /* return list of slot id from available slots */
+    public static ObservableList<String> getSlotID() throws SQLException {
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT `available_slots`.`doc_schedule_id` FROM ams.available_slots WHERE appointment_status = 0;");
+        ObservableList data = FXCollections.observableArrayList();
+        while(resultSet.next()) {
+            data.add(resultSet.getString("doc_schedule_id"));
         }
         return data;
     }
