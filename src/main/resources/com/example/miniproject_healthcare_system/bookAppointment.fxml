@@ -16,14 +16,15 @@
       <HBox layoutX="190.0" layoutY="80.0" prefHeight="35.0" prefWidth="146.0" />
       <Pane layoutX="198.0" layoutY="91.0" prefHeight="440.0" prefWidth="686.0">
          <children>
-            <Button layoutX="29.0" layoutY="253.0" mnemonicParsing="false" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Book Appointment" />
+            <Button layoutX="29.0" layoutY="271.0" mnemonicParsing="false" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Book Appointment" />
             <ChoiceBox fx:id="doctorIDs" layoutX="13.0" layoutY="14.0" prefWidth="150.0" />
             <ChoiceBox fx:id="patientIDs" layoutX="13.0" layoutY="75.0" prefWidth="150.0" />
             <Label layoutX="13.0" layoutY="49.0" text="Doctor Name : " />
             <Label layoutX="13.0" layoutY="108.0" text="Patient Name : " />
             <Label fx:id="doctorName" layoutX="96.0" layoutY="49.0" />
             <Label fx:id="patientName" layoutX="95.0" layoutY="108.0" />
-            <Button fx:id="show" layoutX="13.0" layoutY="135.0" mnemonicParsing="false" onAction="#onShowClick" text="show" />
+            <Button fx:id="show" layoutX="13.0" layoutY="220.0" mnemonicParsing="false" onAction="#onShowClick" text="show" />
+            <ChoiceBox layoutX="13.0" layoutY="136.0" prefWidth="150.0" />
          </children>
       </Pane>
       <HBox prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">

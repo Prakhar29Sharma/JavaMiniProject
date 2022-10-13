@@ -132,6 +132,14 @@ public class SlotsController implements Initializable {
         stage.show();
     }
 
+    public void switchToBookAppointment(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("bookAppointment.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void time() {
          timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();
