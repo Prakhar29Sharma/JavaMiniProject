@@ -135,8 +135,22 @@ public class BookAppointmentController implements Initializable {
         patientName = JavaDatabaseConnector.getPatientNameByID(patientID);
         patientNameLabel.setText(patientName);
     }
-    public void bookSlot() {
+    public void bookSlot(ActionEvent event) {
+        bookAppointmentButton.setOnAction(e -> {
+            String slotID = slotIDChoiceBox.getValue();
+            String patientID = patientIDChoiceBox.getValue();
+            String reason = reasonTextArea.getText();
 
+            if(!slotID.equals("") && !patientID.equals("") && !reason.equals("")) {
+                try {
+                    JavaDatabaseConnector.insertAppointment(Integer.parseInt(slotID), Integer.parseInt(patientID), reason);
+                    confirmationLabel.setText("Appointment Booked!");
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+
+        });
     }
 
     public void time() {

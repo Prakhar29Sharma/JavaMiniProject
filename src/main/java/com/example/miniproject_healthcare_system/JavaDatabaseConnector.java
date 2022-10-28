@@ -4,6 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 class JavaDatabaseConnector {
     /* Establishing Connection */
@@ -99,6 +101,26 @@ class JavaDatabaseConnector {
         }
     }
 
+    /* insert data into appointment table */
+    static void insertAppointment(int slot_id, int patient_id, String reason) throws SQLException {
+        String query = "SELECT available_slots.doc_schedule_id,available_slots.doctor_id, available_slots.time, available_slots.date FROM ams.available_slots WHERE available_slots.doc_schedule_id = " + slot_id + ";";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        String doctorId = null, date = null, time = null;
+        while(resultSet.next()) {
+            doctorId = resultSet.getString("doctor_id");
+            date = resultSet.getString("date");
+            time = resultSet.getString("time");
+        }
+        String insertQuery = "INSERT INTO `ams`.`appointment` ( `doctor_id`, `patient_id`, `time`, `date`, `reason_for_appointment`) VALUES (" + Integer.parseInt(doctorId) + ", " + patient_id + ", '" + time + "', '" + date + "', '" + reason + "');";
+        System.out.println(insertQuery);
+        PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+        int status = preparedStatement.executeUpdate();
+        if(status!=0) {
+            System.out.println("Inserted Appointment Data Successfully!");
+        }
+    }
+
     /* deleteDoctor : method for removing a doctor from table view by setting active to 0 */
 
     static void deleteDoctor(String id) throws SQLException {
@@ -124,6 +146,23 @@ class JavaDatabaseConnector {
         }
         return count;
     }
+
+    /* getAppointmentCount()  */
+    public static String getAppointmentCount() throws SQLException {
+        LocalDate localDate = LocalDate.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String date = localDate.format(dateTimeFormatter);
+        String query = "SELECT COUNT(appointment_id) AS 'count' FROM ams.appointment WHERE appointment.date = '" + date + "';";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        String count = null;
+        while(resultSet.next()) {
+            count = resultSet.getString("count");
+        }
+        return count;
+    }
+
+    /* getSlotsCount() */
 
     /* counts total patient present in database */
     public static String getTotalPatients() throws SQLException {
@@ -208,7 +247,7 @@ class JavaDatabaseConnector {
 
     /* set payment status to done */
     public static void setPaymentStatus(int app_id) throws SQLException {
-        String query = "UPDATE `ams`.`appointment` SET `appointment`.`payment_status` = \"done\" WHERE `appointment_id` = "+  app_id + ";";
+        String query = "UPDATE `ams`.`appointment` SET `appointment`.`payment_status` = \"DONE\" WHERE `appointment_id` = "+  app_id + ";";
         System.out.println(query);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         int status = preparedStatement.executeUpdate();
@@ -219,7 +258,7 @@ class JavaDatabaseConnector {
 
     /* setting appointment status to done */
     public static void setAppointmentStatus(int app_id) throws SQLException {
-        String query = "UPDATE `ams`.`appointment` SET `appointment`.`appointment_status` = \"done\" WHERE `appointment_id` = "+  app_id + ";";
+        String query = "UPDATE `ams`.`appointment` SET `appointment`.`appointment_status` = \"DONE\" WHERE `appointment_id` = "+  app_id + ";";
         System.out.println(query);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         int status = preparedStatement.executeUpdate();
@@ -261,8 +300,6 @@ class JavaDatabaseConnector {
 
         return list;
     }
-
-
 
 
 

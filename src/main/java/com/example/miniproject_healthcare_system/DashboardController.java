@@ -45,7 +45,11 @@ public class DashboardController implements Initializable {
     @FXML
     Label userLabel;
 
+    @FXML
+    private Label totalAppointmentLabel;
 
+    @FXML
+    private Label totalSlotLabel;
 
     static String username;
 
@@ -139,6 +143,8 @@ public class DashboardController implements Initializable {
             setUser();
             totalDoctor.setText(JavaDatabaseConnector.getTotalDoc());
             totalPatient.setText(JavaDatabaseConnector.getTotalPatients());
+            totalAppointmentLabel.setText(JavaDatabaseConnector.getAppointmentCount());
+            totalSlotLabel.setText("");
 
         } catch (Exception e) {
             System.out.println(e);

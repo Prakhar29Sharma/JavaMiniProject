@@ -205,6 +205,8 @@ public class AppointmentsController implements Initializable {
         stage.show();
     }
 
+
+
     public void time() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();

@@ -19,7 +19,7 @@
    <children>
       <Pane layoutX="710.0" layoutY="93.0" prefHeight="440.0" prefWidth="175.0">
          <children>
-            <Button fx:id="bookAppointmentButton" layoutX="12.0" layoutY="346.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Book Appointment" />
+            <Button fx:id="bookAppointmentButton" layoutX="12.0" layoutY="346.0" mnemonicParsing="false" onAction="#bookSlot" prefHeight="27.0" prefWidth="150.0" text="Book Appointment" />
             <ChoiceBox fx:id="slotIDChoiceBox" layoutX="9.0" layoutY="63.0" prefWidth="150.0" />
             <Button fx:id="showButton" layoutX="9.0" layoutY="195.0" mnemonicParsing="false" onAction="#show" text="show" />
             <ChoiceBox fx:id="patientIDChoiceBox" layoutX="9.0" layoutY="119.0" prefWidth="150.0" />
@@ -28,7 +28,7 @@
             <TextArea fx:id="reasonTextArea" layoutX="9.0" layoutY="237.0" prefHeight="75.0" prefWidth="150.0" promptText="Enter Reason for Appointment                    (Eg : Back Pain)" wrapText="true" />
             <Label layoutX="10.0" layoutY="46.0" text="Choose Slot" />
             <Label layoutX="9.0" layoutY="102.0" prefHeight="17.0" prefWidth="99.0" text="Choose Patient ID" />
-            <Label fx:id="confirmationLabel" alignment="CENTER" layoutX="3.0" layoutY="391.0" prefHeight="17.0" prefWidth="168.0" text="confirmation Label" />
+            <Label fx:id="confirmationLabel" alignment="CENTER" layoutX="3.0" layoutY="391.0" prefHeight="17.0" prefWidth="168.0" />
          </children>
       </Pane>
       <HBox prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
