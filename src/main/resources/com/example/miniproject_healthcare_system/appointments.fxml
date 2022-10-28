@@ -129,9 +129,9 @@
       </VBox>
       <HBox layoutY="549.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" />
       <DatePicker fx:id="datePicker" layoutX="192.0" layoutY="84.0" promptText="Select Date" />
-      <Button fx:id="searchButton" layoutX="535.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="Search" />
-      <ChoiceBox layoutX="375.0" layoutY="84.0" prefWidth="150.0" />
-      <TextField layoutX="444.0" layoutY="116.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter Appointment ID" />
-      <Button layoutX="585.0" layoutY="116.0" mnemonicParsing="false" text="Appointment Status" />
+      <Button fx:id="searchButton" layoutX="535.0" layoutY="83.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="78.0" text="Search" />
+      <ChoiceBox fx:id="doctorCheckBox" layoutX="375.0" layoutY="84.0" prefWidth="150.0" />
+      <TextField fx:id="apptID2" layoutX="444.0" layoutY="116.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter Appointment ID" />
+      <Button fx:id="changeAppointmentStatusButton" layoutX="585.0" layoutY="116.0" mnemonicParsing="false" text="Appointment Status" />
    </children>
 </AnchorPane>

@@ -174,6 +174,55 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* get booked appointment details from database */
+    public static ObservableList<appointment> getAppointmentDetails() {
+        ObservableList<appointment> list = FXCollections.observableArrayList();
+        try {
+            String query = "select appointment.appointment_id, doctor.firstName as dname, patient.firstName as pname, appointment.date, appointment.time, appointment.payment_status, appointment.appointment_status, appointment.reason_for_appointment from appointment, doctor, patient where doctor.doctor_id = appointment.doctor_id and patient.patient_id = appointment.patient_id;";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while(resultSet.next()) {
+                list.add(new appointment(Integer.parseInt(resultSet.getString("appointment_id")), resultSet.getString("dname"), resultSet.getString("pname"), resultSet.getString("date"), resultSet.getString("time"), resultSet.getString("payment_status"), resultSet.getString("appointment_status"), resultSet.getString("reason_for_appointment")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
+
+    /* get booked appointment details from database filtered upon date */
+    public static ObservableList<appointment> getAppointmentDetailsByDate(String date) {
+        ObservableList<appointment> list = FXCollections.observableArrayList();
+        try {
+            String query = "select appointment.appointment_id, doctor.firstName as dname, patient.firstName as pname, appointment.date, appointment.time, appointment.payment_status, appointment.appointment_status, appointment.reason_for_appointment from appointment, doctor, patient where doctor.doctor_id = appointment.doctor_id and patient.patient_id = appointment.patient_id and appointment.date = "+ date +";";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while(resultSet.next()) {
+                list.add(new appointment(Integer.parseInt(resultSet.getString("appointment_id")), resultSet.getString("dname"), resultSet.getString("pname"), resultSet.getString("date"), resultSet.getString("time"), resultSet.getString("payment_status"), resultSet.getString("appointment_status"), resultSet.getString("reason_for_appointment")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
+
+    /* get booked appointment details from database filtered upon doctor_id */
+    public static ObservableList<appointment> getAppointmentDetailsByDoctorId(int doctor_id) {
+        ObservableList<appointment> list = FXCollections.observableArrayList();
+        try {
+            String query = "select appointment.appointment_id, doctor.firstName as dname, patient.firstName as pname, appointment.date, appointment.time, appointment.payment_status, appointment.appointment_status, appointment.reason_for_appointment from appointment, doctor, patient where doctor.doctor_id = appointment.doctor_id and patient.patient_id = appointment.patient_id and appointment.doctor_id = "+ doctor_id +";";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while(resultSet.next()) {
+                list.add(new appointment(Integer.parseInt(resultSet.getString("appointment_id")), resultSet.getString("dname"), resultSet.getString("pname"), resultSet.getString("date"), resultSet.getString("time"), resultSet.getString("payment_status"), resultSet.getString("appointment_status"), resultSet.getString("reason_for_appointment")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
+
+
     /* return list of time slots from database */
     public static ObservableList<timeslot> getAvailableSlot() {
         ObservableList<timeslot> list = FXCollections.observableArrayList();
