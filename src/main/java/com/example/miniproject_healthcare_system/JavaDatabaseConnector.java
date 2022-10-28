@@ -112,12 +112,21 @@ class JavaDatabaseConnector {
             date = resultSet.getString("date");
             time = resultSet.getString("time");
         }
+
         String insertQuery = "INSERT INTO `ams`.`appointment` ( `doctor_id`, `patient_id`, `time`, `date`, `reason_for_appointment`) VALUES (" + Integer.parseInt(doctorId) + ", " + patient_id + ", '" + time + "', '" + date + "', '" + reason + "');";
         System.out.println(insertQuery);
         PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
         int status = preparedStatement.executeUpdate();
         if(status!=0) {
             System.out.println("Inserted Appointment Data Successfully!");
+        }
+
+        String updateQuery = "UPDATE `ams`.`available_slots` SET `available_slots`.`appointment_status` = 1 WHERE `available_slots`.`doc_schedule_id` = "+ slot_id +";";
+        System.out.println(updateQuery);
+        PreparedStatement preparedStatement1 = connection.prepareStatement(updateQuery);
+        int status1 = preparedStatement1.executeUpdate();
+        if(status1!=0) {
+            System.out.println("Made Booked Slot Unavailable!");
         }
     }
 
@@ -163,6 +172,20 @@ class JavaDatabaseConnector {
     }
 
     /* getSlotsCount() */
+
+    public static String getSlotsCount() throws SQLException {
+        LocalDate localDate = LocalDate.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String date = localDate.format(dateTimeFormatter);
+        String query = "SELECT COUNT(doc_schedule_id) AS 'count' FROM ams.available_slots WHERE available_slots.date = '" + date + "';";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        String count = null;
+        while(resultSet.next()) {
+            count = resultSet.getString("count");
+        }
+        return count;
+    }
 
     /* counts total patient present in database */
     public static String getTotalPatients() throws SQLException {

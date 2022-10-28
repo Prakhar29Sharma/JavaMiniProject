@@ -144,7 +144,7 @@ public class DashboardController implements Initializable {
             totalDoctor.setText(JavaDatabaseConnector.getTotalDoc());
             totalPatient.setText(JavaDatabaseConnector.getTotalPatients());
             totalAppointmentLabel.setText(JavaDatabaseConnector.getAppointmentCount());
-            totalSlotLabel.setText("");
+            totalSlotLabel.setText(JavaDatabaseConnector.getSlotsCount());
 
         } catch (Exception e) {
             System.out.println(e);
