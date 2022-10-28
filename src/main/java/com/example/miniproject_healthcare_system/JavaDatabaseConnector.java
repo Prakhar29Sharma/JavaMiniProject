@@ -206,6 +206,28 @@ class JavaDatabaseConnector {
         return list;
     }
 
+    /* set payment status to done */
+    public static void setPaymentStatus(int app_id) throws SQLException {
+        String query = "UPDATE `ams`.`appointment` SET `appointment`.`payment_status` = \"done\" WHERE `appointment_id` = "+  app_id + ";";
+        System.out.println(query);
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        int status = preparedStatement.executeUpdate();
+        if(status!=0) {
+            System.out.println("Payment Status Changed Successfully!");
+        }
+    }
+
+    /* setting appointment status to done */
+    public static void setAppointmentStatus(int app_id) throws SQLException {
+        String query = "UPDATE `ams`.`appointment` SET `appointment`.`appointment_status` = \"done\" WHERE `appointment_id` = "+  app_id + ";";
+        System.out.println(query);
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        int status = preparedStatement.executeUpdate();
+        if(status!=0) {
+            System.out.println("Appointment Status Changed Successfully!");
+        }
+    }
+
     /* get booked appointment details from database filtered upon doctor_id */
     public static ObservableList<appointment> getAppointmentDetailsByDoctorId(int doctor_id) {
         ObservableList<appointment> list = FXCollections.observableArrayList();

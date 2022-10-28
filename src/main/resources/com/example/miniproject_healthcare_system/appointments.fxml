@@ -38,7 +38,7 @@
          </content>
       </ScrollPane>
       <TextField fx:id="apptID" layoutX="192.0" layoutY="116.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter Appointment ID" />
-      <Button fx:id="paymentButton" layoutX="333.0" layoutY="116.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Payment Done" />
+      <Button fx:id="paymentButton" layoutX="333.0" layoutY="116.0" mnemonicParsing="false" onAction="#onPayment" prefHeight="26.0" prefWidth="102.0" text="Payment Done" />
       <HBox prefHeight="75.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);">
          <children>
             <Pane prefHeight="75.0" prefWidth="132.0">
@@ -132,6 +132,6 @@
       <Button fx:id="searchButton" layoutX="535.0" layoutY="83.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="78.0" text="Search" />
       <ChoiceBox fx:id="doctorCheckBox" layoutX="375.0" layoutY="84.0" prefWidth="150.0" />
       <TextField fx:id="apptID2" layoutX="444.0" layoutY="116.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter Appointment ID" />
-      <Button fx:id="changeAppointmentStatusButton" layoutX="585.0" layoutY="116.0" mnemonicParsing="false" text="Appointment Status" />
+      <Button fx:id="changeAppointmentStatusButton" layoutX="585.0" layoutY="116.0" mnemonicParsing="false" onAction="#onAppointmentDone" text="Appointment Status" />
    </children>
 </AnchorPane>

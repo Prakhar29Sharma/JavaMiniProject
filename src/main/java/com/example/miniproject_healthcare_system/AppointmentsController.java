@@ -17,6 +17,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -119,6 +120,36 @@ public class AppointmentsController implements Initializable {
         }
 
 
+    }
+
+    public void onPayment(ActionEvent event) {
+        paymentButton.setOnAction(e -> {
+            String appointmentID = apptID.getText();
+            if(!appointmentID.equals("")) {
+                try {
+                    JavaDatabaseConnector.setPaymentStatus(Integer.parseInt(appointmentID));
+                    listM = JavaDatabaseConnector.getAppointmentDetails();
+                    appointment_table.setItems(listM);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
+
+    public void onAppointmentDone(ActionEvent event) {
+        changeAppointmentStatusButton.setOnAction(e -> {
+            String appointmentID = apptID2.getText();
+            if(!appointmentID.equals("")) {
+                try {
+                    JavaDatabaseConnector.setAppointmentStatus(Integer.parseInt(appointmentID));
+                    listM = JavaDatabaseConnector.getAppointmentDetails();
+                    appointment_table.setItems(listM);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
     public void switchToLogin(ActionEvent event) throws IOException {
