@@ -39,7 +39,6 @@ public class SlotsController implements Initializable {
     @FXML
     Label showTimeLabel;
 
-
     @FXML
     Label userLabel;
 

@@ -129,6 +129,16 @@ public class BookAppointmentController implements Initializable {
         stage.show();
     }
 
+    public void show() throws SQLException {
+        String patientName;
+        int patientID = Integer.parseInt(patientIDChoiceBox.getValue());
+        patientName = JavaDatabaseConnector.getPatientNameByID(patientID);
+        patientNameLabel.setText(patientName);
+    }
+    public void bookSlot() {
+
+    }
+
     public void time() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();

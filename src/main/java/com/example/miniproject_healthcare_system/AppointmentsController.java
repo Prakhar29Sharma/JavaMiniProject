@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -26,14 +26,53 @@ public class AppointmentsController implements Initializable {
     private Scene scene;
 
     @FXML
-    Label timeLabel;
+    private TableColumn<?, ?> AppIDColumn;
 
     @FXML
-    Label dateLabel;
-
+    private TableColumn<?, ?> appointmentStatusColumn;
 
     @FXML
-    Label userLabel;
+    private TableView<?> appointment_table;
+
+    @FXML
+    private TextField apptID;
+
+    @FXML
+    private TableColumn<?, ?> dateColumn;
+
+    @FXML
+    private Label dateLabel;
+
+    @FXML
+    private DatePicker datePicker;
+
+    @FXML
+    private TableColumn<?, ?> doctorNameColumn;
+
+    @FXML
+    private TableColumn<?, ?> patientNameColumn;
+
+    @FXML
+    private Button paymentButton;
+
+    @FXML
+    private TableColumn<?, ?> paymentStatusColumn;
+
+    @FXML
+    private TableColumn<?, ?> reasonColumn;
+
+    @FXML
+    private Button searchButton;
+
+    @FXML
+    private TableColumn<?, ?> timeColumn;
+
+    @FXML
+    private Label timeLabel;
+
+    @FXML
+    private Label userLabel;
+
 
     Timeline timeline;
 

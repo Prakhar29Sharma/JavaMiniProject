@@ -21,7 +21,7 @@
          <children>
             <Button fx:id="bookAppointmentButton" layoutX="12.0" layoutY="346.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: #E1EBEE; -fx-border-color: #B0C4DE;" text="Book Appointment" />
             <ChoiceBox fx:id="slotIDChoiceBox" layoutX="9.0" layoutY="63.0" prefWidth="150.0" />
-            <Button fx:id="showButton" layoutX="9.0" layoutY="195.0" mnemonicParsing="false" text="show" />
+            <Button fx:id="showButton" layoutX="9.0" layoutY="195.0" mnemonicParsing="false" onAction="#show" text="show" />
             <ChoiceBox fx:id="patientIDChoiceBox" layoutX="9.0" layoutY="119.0" prefWidth="150.0" />
             <Label layoutX="9.0" layoutY="160.0" prefHeight="17.0" prefWidth="120.0" text="Patient Name : " />
             <Label fx:id="patientNameLabel" layoutX="96.0" layoutY="160.0" prefHeight="17.0" prefWidth="78.0" />
