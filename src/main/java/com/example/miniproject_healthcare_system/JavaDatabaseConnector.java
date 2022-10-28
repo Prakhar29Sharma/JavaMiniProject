@@ -194,7 +194,7 @@ class JavaDatabaseConnector {
     public static ObservableList<appointment> getAppointmentDetailsByDate(String date) {
         ObservableList<appointment> list = FXCollections.observableArrayList();
         try {
-            String query = "select appointment.appointment_id, doctor.firstName as dname, patient.firstName as pname, appointment.date, appointment.time, appointment.payment_status, appointment.appointment_status, appointment.reason_for_appointment from appointment, doctor, patient where doctor.doctor_id = appointment.doctor_id and patient.patient_id = appointment.patient_id and appointment.date = "+ date +";";
+            String query = "select appointment.appointment_id, doctor.firstName as dname, patient.firstName as pname, appointment.date, appointment.time, appointment.payment_status, appointment.appointment_status, appointment.reason_for_appointment from appointment, doctor, patient where doctor.doctor_id = appointment.doctor_id and patient.patient_id = appointment.patient_id and appointment.date = '"+ date +"';";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()) {

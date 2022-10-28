@@ -91,20 +91,29 @@ public class AppointmentsController implements Initializable {
 
     public void onSearch(ActionEvent event) {
         LocalDate localDate = datePicker.getValue();
-        String doctorId , date ;
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        date = localDate.format(dateTimeFormatter);
-        doctorId = doctorCheckBox.getValue();
+        String doctorId, date = "";
 
-        if(doctorId!=null && date.equals("")) {
-            listM = JavaDatabaseConnector.getAppointmentDetailsByDoctorId(Integer.parseInt(doctorId));
-            appointment_table.setItems(listM);
+        if(localDate!=null) {
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            date = localDate.format(dateTimeFormatter);
         }
-        if(doctorId==null && date.equals("")) {
+
+        doctorId = doctorCheckBox.getValue();
+        if(doctorId == null) {
+            doctorId = "";
+        }
+
+        if(doctorId.equals("") && date.equals("")) {
             listM = JavaDatabaseConnector.getAppointmentDetails();
             appointment_table.setItems(listM);
         }
-        if(!date.equals("") && doctorId == null) {
+
+        if(!doctorId.equals("") && date.equals("")) {
+            listM = JavaDatabaseConnector.getAppointmentDetailsByDoctorId(Integer.parseInt(doctorId));
+            appointment_table.setItems(listM);
+        }
+
+        if(!date.equals("") && doctorId.equals("")) {
             listM = JavaDatabaseConnector.getAppointmentDetailsByDate(date);
             appointment_table.setItems(listM);
         }
