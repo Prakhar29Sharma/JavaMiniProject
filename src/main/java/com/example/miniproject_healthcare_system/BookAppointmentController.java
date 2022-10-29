@@ -129,12 +129,15 @@ public class BookAppointmentController implements Initializable {
         stage.show();
     }
 
+    // shows patient name when show button is clicked
     public void show() throws SQLException {
         String patientName;
         int patientID = Integer.parseInt(patientIDChoiceBox.getValue());
         patientName = JavaDatabaseConnector.getPatientNameByID(patientID);
         patientNameLabel.setText(patientName);
     }
+
+    // adds data to database when appointment is booked
     public void bookSlot(ActionEvent event) {
         bookAppointmentButton.setOnAction(e -> {
             String slotID = slotIDChoiceBox.getValue();

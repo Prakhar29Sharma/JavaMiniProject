@@ -194,7 +194,7 @@ public class SlotsController implements Initializable {
 
     //patientIDs.setItems(JavaDatabaseConnector.getPatientIDs());
 
-
+    // showing doctor name, date and slot when show button is clicked
     public void onShowClick(ActionEvent event) {
         show.setOnAction(e -> {
             try {
@@ -207,6 +207,7 @@ public class SlotsController implements Initializable {
         });
     }
 
+    // A function to add new slots to the database
     public void onAddSlots(ActionEvent event) {
         addSlotButton.setOnAction(e -> {
             String doctorID = doctorIDs.getValue();
@@ -225,17 +226,17 @@ public class SlotsController implements Initializable {
                 }
             } else {
                 if(doctorID.equals("")) {
-
+                    System.out.println("please choose a doctor");
                 } else {
 
                 }
                 if(timeSlot.equals("")) {
-
+                    System.out.println("please choose time slot");
                 } else {
 
                 }
                 if(date.equals("")) {
-
+                    System.out.println("please choose date");
                 } else {
 
                 }

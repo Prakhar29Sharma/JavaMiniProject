@@ -150,6 +150,7 @@ public class PatientRecordController implements Initializable {
     }
 
 
+    // function for searching
     public void onClickSearch(ActionEvent event){
         searchButton.setOnAction(e -> {
             String specifiedField = choiceBox.getValue();

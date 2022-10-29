@@ -122,6 +122,7 @@ public class DashboardController implements Initializable {
     }
 
 
+    // shows date and time at top left of the application
     public void time() {
          timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             LocalDateTime date1 = LocalDateTime.now();

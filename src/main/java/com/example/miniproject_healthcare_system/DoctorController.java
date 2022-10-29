@@ -137,6 +137,7 @@ public class DoctorController implements Initializable {
         });
     }
 
+    /* onDelete() : sets doctor.active = false */
     public void onDelete(ActionEvent event) {
         removeButton.setOnAction(e -> {
             String id = idField.getText();

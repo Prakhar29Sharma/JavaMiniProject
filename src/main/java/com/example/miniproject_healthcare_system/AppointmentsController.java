@@ -90,7 +90,9 @@ public class AppointmentsController implements Initializable {
     Timeline timeline;
 
 
+    // when search button is clicked onSearch() gets invoked
     public void onSearch(ActionEvent event) {
+        // extracting values from fxml components
         LocalDate localDate = datePicker.getValue();
         String doctorId, date = "";
 
@@ -122,6 +124,7 @@ public class AppointmentsController implements Initializable {
 
     }
 
+    // for changing payment status, when payment button is clicked onPayment() gets invoked
     public void onPayment(ActionEvent event) {
         paymentButton.setOnAction(e -> {
             String appointmentID = apptID.getText();
@@ -137,6 +140,7 @@ public class AppointmentsController implements Initializable {
         });
     }
 
+    // change appointment status
     public void onAppointmentDone(ActionEvent event) {
         changeAppointmentStatusButton.setOnAction(e -> {
             String appointmentID = apptID2.getText();

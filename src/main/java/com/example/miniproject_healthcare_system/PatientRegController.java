@@ -67,6 +67,7 @@ public class PatientRegController implements Initializable {
             String city_ = city.getText();
             String gender = genderChoice.getValue();
 
+            // validation
             if(!first_name.equals("") && !last_name.equals("") && !phone_num.equals("") && !email_.equals("") && !city_.equals("") && !gender.equals(null)) {
                 if(UserRegistrationController.validateEmail(email_)) {
                     // insert user
@@ -78,7 +79,43 @@ public class PatientRegController implements Initializable {
                     }
                 }
             } else {
-                // null check cases
+
+                if(first_name.equals("")) {
+                    System.out.println("please enter first name");
+                } else {
+
+                }
+
+                if(last_name.equals("")) {
+                    System.out.println("please enter last name");
+                } else {
+
+                }
+
+                if(phone_num.equals("")) {
+                    System.out.println("please enter phone number");
+                } else {
+
+                }
+
+                if(email_.equals("")) {
+                    System.out.println("please enter email");
+                } else {
+
+                }
+
+                if(city_.equals("")) {
+                    System.out.println("please enter city ");
+                } else {
+
+                }
+
+                if(gender.equals("")) {
+                    System.out.println("please choose gender");
+                } else {
+
+                }
+
             }
         });
     }

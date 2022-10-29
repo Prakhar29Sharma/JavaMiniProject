@@ -11,7 +11,9 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        /* loads the login page */
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
+        // application UI size : 900x600
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         stage.setResizable(false);
         stage.initStyle(StageStyle.DECORATED);

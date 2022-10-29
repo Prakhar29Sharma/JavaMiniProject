@@ -51,8 +51,10 @@ public class DocRegistrationController {
         stage.show();
     }
 
+    // to add new doctor to database
     public void onRegister(ActionEvent event) throws IOException {
         RegisterButton.setOnAction(e -> {
+            // getting values from text fields
             String first = fname.getText();
             String last = lname.getText();
             String spec = specialization.getText();
@@ -60,6 +62,7 @@ public class DocRegistrationController {
             String cityAd = city.getText();
             String phone = phno.getText();
 
+            // validation before adding record
             if(first!="" && last!="" && spec!="" && qual!="" && cityAd!="" && phone!="") {
                 try {
                     JavaDatabaseConnector.insertDoctor("Dr. "+first, last, qual, spec, phone, cityAd);
@@ -69,35 +72,35 @@ public class DocRegistrationController {
                 }
             } else {
                 if(first == ""){
-
+                    System.out.println("please enter first name ");
                 } else {
 
                 }
                 if(last == "") {
-
+                    System.out.println("please enter last name");
                 } else {
 
                 }
                 if(spec == "") {
-
+                    System.out.println("please enter specialization");
                 } else {
 
                 }
 
                 if(qual == "") {
-
+                    System.out.println("please enter qualification");
                 } else {
 
                 }
 
                 if(cityAd == "") {
-
+                    System.out.println("please enter city");
                 } else {
 
                 }
 
                 if(phone == "") {
-
+                    System.out.println("please enter phone number");
                 } else {
 
                 }

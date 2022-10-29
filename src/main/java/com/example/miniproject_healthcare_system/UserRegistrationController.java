@@ -44,6 +44,7 @@ public class UserRegistrationController {
         stage.show();
     }
 
+    // function for validation of email
     public static boolean validateEmail(String email) {
             String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
                     "[a-zA-Z0-9_+&*-]+)*@" +
@@ -56,6 +57,7 @@ public class UserRegistrationController {
             return pat.matcher(email).matches();
     }
 
+    // checks strength of a password
     public static int passwordStrength(String pass) {
         int len = pass.length();
         // we can count number of small case, uppercase, special char and numbers to calc strength
@@ -68,14 +70,17 @@ public class UserRegistrationController {
         }
     }
 
+    // function for actions when register button is clicked
     @FXML
     void onButtonClick(ActionEvent event) throws IOException {
         RegisterButton.setOnAction(e -> {
+            // getting values
             String user = usernameField.getText();
             String email = emailField.getText();
             String pass = passwordField.getText();
             String confirmPass = confirmPasswordField.getText();
 
+            // validation before inserting record into database
             if(!user.equals("") && !email.equals("") && !pass.equals("") && !confirmPass.equals("")){
                 try {
 

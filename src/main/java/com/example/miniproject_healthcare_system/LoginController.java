@@ -106,8 +106,10 @@ public class LoginController {
     @FXML
     void onButtonClick(ActionEvent event) throws IOException {
         button.setOnAction(e -> {
+            // getting values
             usernameText = username.getText();
             passwordText = password.getText();
+            // validation
             if(usernameText == "" && passwordText == "") {
                 warningLabel1.setText("please enter username!");
                 warningLabel2.setText("please enter password!");
@@ -135,6 +137,7 @@ public class LoginController {
                         } else {
                             System.out.println("Access Granted!");
 
+                            // adding entry to logs
                             LocalDateTime localDateTime = LocalDateTime.now();
                             DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
                             String formattedDate = localDateTime.format(myFormatObj);
@@ -142,8 +145,10 @@ public class LoginController {
                             String fileName = "logs.txt";
                             appendStrToFile(fileName, log);
 
+                            // pass username value to dashboard controller
                             DashboardController.setUsername(usernameText);
 
+                            // loads dashboard scene
                             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
                             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                             scene = new Scene(fxmlLoader.load());
