@@ -65,14 +65,13 @@ public class PatientRegController implements Initializable {
             String phone_num = phno.getText();
             String email_ = email.getText();
             String city_ = city.getText();
-            String cityA = cityArea.getText();
-            String gender = (String) genderChoice.getValue();
+            String gender = genderChoice.getValue();
 
             if(!first_name.equals("") && !last_name.equals("") && !phone_num.equals("") && !email_.equals("") && !city_.equals("") && !gender.equals(null)) {
-                if(UserRegistrationController.validateEmail(email_) == true) {
+                if(UserRegistrationController.validateEmail(email_)) {
                     // insert user
                     try {
-                        JavaDatabaseConnector.insertPatient(first_name, last_name, phone_num, email_, city_, cityA, gender);
+                        JavaDatabaseConnector.insertPatient(first_name, last_name, phone_num, email_, city_, gender);
                         confirmationLabel.setText("Patient Registered Successfully");
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);

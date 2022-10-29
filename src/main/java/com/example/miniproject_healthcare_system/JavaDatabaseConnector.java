@@ -79,8 +79,8 @@ class JavaDatabaseConnector {
     }
 
     /* insert patient details into database */
-    static void insertPatient(String fname, String lname, String phone_num, String email, String city,String cityArea, String gender) throws SQLException {
-        String query = "INSERT INTO `ams`.`patient` (`firstName`, `lastName`, `phone_no`, `email`, `city`, `cityArea`, `gender`) VALUES ('"+fname+"', '"+ lname + "', '"+ phone_num + "', '" + email + "', '" + city + "', '"+ cityArea + "','" + gender + "');";
+    static void insertPatient(String fname, String lname, String phone_num, String email, String city, String gender) throws SQLException {
+        String query = "INSERT INTO `ams`.`patient` (`firstName`, `lastName`, `phone_no`, `email`, `city`, `gender`) VALUES ('"+fname+"', '"+ lname + "', '"+ phone_num + "', '" + email + "', '" + city + "','" + gender + "');";
         System.out.println(query);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         int status = preparedStatement.executeUpdate();

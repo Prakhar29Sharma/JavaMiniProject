@@ -12,7 +12,7 @@
       <AnchorPane layoutX="127.0" layoutY="47.0" prefHeight="506.0" prefWidth="646.0" style="-fx-background-color: #F8F8FF;">
          <children>
             <TextField fx:id="phno" layoutX="127.0" layoutY="172.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your phone number" />
-            <Button fx:id="registerButton" layoutX="220.0" layoutY="391.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="37.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" text="Register" textFill="WHITE" />
+            <Button fx:id="registerButton" layoutX="222.0" layoutY="318.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="37.0" prefWidth="204.0" style="-fx-background-color: linear-gradient(to right top, #a617ff, #9731fc, #893ff8, #7c49f3, #7051ed, #5a62f3, #4471f6, #2f7df6, #0093fd, #00a8fe, #2cbafd, #5bcbfa);" text="Register" textFill="WHITE" />
             <Label alignment="CENTER" layoutX="241.0" layoutY="14.0" prefHeight="27.0" prefWidth="162.0" text="Patient Registration" textFill="#a617ff">
                <font>
                   <Font size="18.0" />
@@ -28,14 +28,14 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <Label layoutX="127.0" layoutY="285.0" text="Gender" wrapText="true">
+            <Label layoutX="340.0" layoutY="215.0" text="Gender" wrapText="true">
                <font>
                   <Font size="11.0" />
                </font>
             </Label>
             <Label layoutX="205.0" layoutY="149.0" text="*" textFill="#e40707" />
             <Label layoutX="181.0" layoutY="215.0" prefHeight="17.0" prefWidth="15.0" text="*" textFill="#e40707" />
-            <Label layoutX="170.0" layoutY="284.0" prefHeight="17.0" prefWidth="15.0" text="*" textFill="#e40707" translateX="-5.0" />
+            <Label layoutX="383.0" layoutY="214.0" prefHeight="17.0" prefWidth="15.0" text="*" textFill="#e40707" translateX="-5.0" />
             <TextField fx:id="lname" layoutX="340.0" layoutY="104.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your last name" />
             <Label layoutX="341.0" layoutY="82.0" text="Last Name  " wrapText="true">
                <font>
@@ -49,12 +49,6 @@
                </font>
             </Label>
             <Label layoutX="370.0" layoutY="149.0" prefHeight="17.0" prefWidth="15.0" text="*" textFill="#e40707" />
-            <TextField fx:id="cityArea" layoutX="340.0" layoutY="236.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your city area" />
-            <Label layoutX="342.0" layoutY="216.0" prefHeight="16.0" prefWidth="46.0" text="City Area" wrapText="true">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Label>
             <TextField fx:id="fname" layoutX="127.0" layoutY="104.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your first name" />
             <Label layoutX="129.0" layoutY="82.0" prefHeight="16.0" prefWidth="67.0" text="First Name" wrapText="true">
                <font>
@@ -64,7 +58,7 @@
             <Label layoutX="185.0" layoutY="81.0" text="*" textFill="#e40707" />
             <TextField fx:id="city" layoutX="127.0" layoutY="236.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your city area" />
             <TextField fx:id="email" layoutX="339.0" layoutY="172.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your city area" />
-            <ChoiceBox fx:id="genderChoice" layoutX="127.0" layoutY="302.0" prefHeight="26.0" prefWidth="180.0" />
+            <ChoiceBox fx:id="genderChoice" layoutX="340.0" layoutY="232.0" prefHeight="26.0" prefWidth="180.0" />
             <Label fx:id="confirmationLabel" alignment="CENTER" layoutX="1.0" layoutY="455.0" prefHeight="18.0" prefWidth="646.0" />
             <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#switchToPatientRec" text="Back" />
          </children>
