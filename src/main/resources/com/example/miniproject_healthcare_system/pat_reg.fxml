@@ -56,8 +56,8 @@
                </font>
             </Label>
             <Label layoutX="185.0" layoutY="81.0" text="*" textFill="#e40707" />
-            <TextField fx:id="city" layoutX="127.0" layoutY="236.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your city area" />
-            <TextField fx:id="email" layoutX="339.0" layoutY="172.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your city area" />
+            <TextField fx:id="city" layoutX="127.0" layoutY="236.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your city " />
+            <TextField fx:id="email" layoutX="339.0" layoutY="172.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter your email" />
             <ChoiceBox fx:id="genderChoice" layoutX="340.0" layoutY="232.0" prefHeight="26.0" prefWidth="180.0" />
             <Label fx:id="confirmationLabel" alignment="CENTER" layoutX="1.0" layoutY="455.0" prefHeight="18.0" prefWidth="646.0" />
             <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#switchToPatientRec" text="Back" />
