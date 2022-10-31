@@ -148,6 +148,8 @@ public class BookAppointmentController implements Initializable {
                 try {
                     JavaDatabaseConnector.insertAppointment(Integer.parseInt(slotID), Integer.parseInt(patientID), reason);
                     confirmationLabel.setText("Appointment Booked!");
+                    listM = JavaDatabaseConnector.getAvailableSlot();
+                    availSlotsTable.setItems(listM);
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
