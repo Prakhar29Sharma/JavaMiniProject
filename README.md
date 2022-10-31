@@ -1,8 +1,8 @@
 # JavaMiniProject
 
-# Clinic Management System
+# Appointment Booking System
 
-## What is Clinic Management System?
+## What is Appointment Booking System?
 * An Appointment Booking System
 * Manages Patient and Doctor Records
 
